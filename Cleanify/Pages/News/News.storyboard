@@ -65,7 +65,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="M51-NF-UqL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="News" id="Z4V-tX-TRa"/>
+                    <tabBarItem key="tabBarItem" title="News" image="News Icon" selectedImage="News Icon" id="Z4V-tX-TRa"/>
                     <navigationItem key="navigationItem" title="NEWS" id="voV-iE-usl">
                         <barButtonItem key="backBarButtonItem" title="Back" id="1Ld-8G-vxk"/>
                     </navigationItem>
@@ -83,7 +83,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UGa-XV-au6">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.51372549020000002" green="0.58823529409999997" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.51372549020000002" green="0.58823529409999997" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -94,12 +101,14 @@
             </objects>
             <point key="canvasLocation" x="137" y="57"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--NEWS-->
         <scene sceneID="khL-fk-Wdi">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="m4m-DG-WcZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="a6F-q7-dg8"/>
+                    <navigationItem key="navigationItem" title="NEWS" id="a6F-q7-dg8">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="7V6-Yg-4ar"/>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gCS-dN-UhJ">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -116,4 +125,7 @@
             <point key="canvasLocation" x="999.20000000000005" y="56.896551724137936"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="News Icon" width="21" height="28"/>
+    </resources>
 </document>
