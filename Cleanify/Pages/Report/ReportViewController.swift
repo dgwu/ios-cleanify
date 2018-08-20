@@ -22,7 +22,7 @@ class ReportViewController: UIViewController {
     }
     
     func getReportList(){
-        
+        // Get all report list
     }
     
     /*
