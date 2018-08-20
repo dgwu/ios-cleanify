@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FDA26FF212A718F00C0F6CA /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FDA26FE212A718F00C0F6CA /* Storyboard.storyboard */; };
 		91FA1C1A212A5FB100D02550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA1C19212A5FB100D02550 /* AppDelegate.swift */; };
 		91FA1C21212A5FB200D02550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FA1C20212A5FB200D02550 /* Assets.xcassets */; };
 		91FA1C24212A5FB200D02550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FA1C22212A5FB200D02550 /* LaunchScreen.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6FDA26FE212A718F00C0F6CA /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = "../../../../../Desktop/ios-cleanify-master/Storyboard.storyboard"; sourceTree = "<group>"; };
 		91FA1C16212A5FB100D02550 /* Cleanify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cleanify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA1C19212A5FB100D02550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91FA1C20212A5FB200D02550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		91FA1C2E212A677D00D02550 /* NewsReport */ = {
 			isa = PBXGroup;
 			children = (
+				6FDA26FE212A718F00C0F6CA /* Storyboard.storyboard */,
 			);
 			path = NewsReport;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91FA1C24212A5FB200D02550 /* LaunchScreen.storyboard in Resources */,
+				6FDA26FF212A718F00C0F6CA /* Storyboard.storyboard in Resources */,
 				91FA1C21212A5FB200D02550 /* Assets.xcassets in Resources */,
 				91FA1C30212A67B500D02550 /* News.storyboard in Resources */,
 			);
