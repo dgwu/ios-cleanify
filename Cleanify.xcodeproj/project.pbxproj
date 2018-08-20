@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		651D43DD212A8B5F009A0C12 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D43DC212A8B5F009A0C12 /* ReportViewController.swift */; };
+		651D43DF212A8B78009A0C12 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651D43DE212A8B78009A0C12 /* Report.storyboard */; };
 		91FA1C1A212A5FB100D02550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA1C19212A5FB100D02550 /* AppDelegate.swift */; };
 		91FA1C21212A5FB200D02550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FA1C20212A5FB200D02550 /* Assets.xcassets */; };
 		91FA1C24212A5FB200D02550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FA1C22212A5FB200D02550 /* LaunchScreen.storyboard */; };
@@ -66,6 +68,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		651D43DC212A8B5F009A0C12 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		651D43DE212A8B78009A0C12 /* Report.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
 		91FA1C16212A5FB100D02550 /* Cleanify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cleanify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA1C19212A5FB100D02550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91FA1C20212A5FB200D02550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,6 +141,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		651D43DB212A8B46009A0C12 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				651D43DE212A8B78009A0C12 /* Report.storyboard */,
+				651D43DC212A8B5F009A0C12 /* ReportViewController.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
 		91FA1C0D212A5FB100D02550 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +183,7 @@
 		91FA1C2C212A674000D02550 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				651D43DB212A8B46009A0C12 /* Report */,
 				91FA1C2D212A676700D02550 /* News */,
 			);
 			path = Pages;
@@ -355,6 +369,7 @@
 				FF1290A5212A823F0082AF9C /* SFCompactText-Medium.otf in Resources */,
 				FF129089212A823F0082AF9C /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				FF12909E212A823F0082AF9C /* SF-Pro-Text-HeavyItalic.otf in Resources */,
+				651D43DF212A8B78009A0C12 /* Report.storyboard in Resources */,
 				FF1290A1212A823F0082AF9C /* SF-Pro-Text-Medium.otf in Resources */,
 				FF1290B2212A823F0082AF9C /* SFCompactDisplay-Bold.otf in Resources */,
 				FF129098212A823F0082AF9C /* SF-Pro-Display-LightItalic.otf in Resources */,
@@ -397,6 +412,7 @@
 			files = (
 				91FA1C32212A67D200D02550 /* NewsViewController.swift in Sources */,
 				91FA1C1A212A5FB100D02550 /* AppDelegate.swift in Sources */,
+				651D43DD212A8B5F009A0C12 /* ReportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
