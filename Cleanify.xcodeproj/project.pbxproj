@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		915825B3212BB14C00D617CE /* ActTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915825B2212BB14C00D617CE /* ActTableViewCell.swift */; };
+		915825B5212BD04000D617CE /* ActDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915825B4212BD04000D617CE /* ActDetail.storyboard */; };
+		915825B9212BD43500D617CE /* ActDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915825B8212BD43500D617CE /* ActDetailViewController.swift */; };
 		91FA1C1A212A5FB100D02550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA1C19212A5FB100D02550 /* AppDelegate.swift */; };
 		91FA1C21212A5FB200D02550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FA1C20212A5FB200D02550 /* Assets.xcassets */; };
 		91FA1C24212A5FB200D02550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FA1C22212A5FB200D02550 /* LaunchScreen.storyboard */; };
 		91FA1C30212A67B500D02550 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FA1C2F212A67B500D02550 /* News.storyboard */; };
 		91FA1C32212A67D200D02550 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA1C31212A67D200D02550 /* NewsViewController.swift */; };
+		91FA1C40212A8B4D00D02550 /* ActMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FA1C3F212A8B4D00D02550 /* ActMap.storyboard */; };
+		91FA1C42212A8B5500D02550 /* ActList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FA1C41212A8B5500D02550 /* ActList.storyboard */; };
+		91FA1C44212A8B6300D02550 /* ActMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA1C43212A8B6300D02550 /* ActMapViewController.swift */; };
+		91FA1C46212A8B6C00D02550 /* ActListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA1C45212A8B6C00D02550 /* ActListViewController.swift */; };
 		FF129086212A823F0082AF9C /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF129052212A823E0082AF9C /* SF-Pro-Display-Thin.otf */; };
 		FF129087212A823F0082AF9C /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF129053212A823E0082AF9C /* SF-Pro-Display-SemiboldItalic.otf */; };
 		FF129088212A823F0082AF9C /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF129054212A823E0082AF9C /* SF-Pro-Text-Heavy.otf */; };
@@ -66,6 +73,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		915825B2212BB14C00D617CE /* ActTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActTableViewCell.swift; sourceTree = "<group>"; };
+		915825B4212BD04000D617CE /* ActDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActDetail.storyboard; sourceTree = "<group>"; };
+		915825B8212BD43500D617CE /* ActDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActDetailViewController.swift; sourceTree = "<group>"; };
 		91FA1C16212A5FB100D02550 /* Cleanify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cleanify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA1C19212A5FB100D02550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91FA1C20212A5FB200D02550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +83,10 @@
 		91FA1C25212A5FB200D02550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91FA1C2F212A67B500D02550 /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		91FA1C31212A67D200D02550 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		91FA1C3F212A8B4D00D02550 /* ActMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActMap.storyboard; sourceTree = "<group>"; };
+		91FA1C41212A8B5500D02550 /* ActList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActList.storyboard; sourceTree = "<group>"; };
+		91FA1C43212A8B6300D02550 /* ActMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActMapViewController.swift; sourceTree = "<group>"; };
+		91FA1C45212A8B6C00D02550 /* ActListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActListViewController.swift; sourceTree = "<group>"; };
 		FF129052212A823E0082AF9C /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		FF129053212A823E0082AF9C /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		FF129054212A823E0082AF9C /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
@@ -137,6 +151,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		915825B7212BD41900D617CE /* ActDetail */ = {
+			isa = PBXGroup;
+			children = (
+				915825B4212BD04000D617CE /* ActDetail.storyboard */,
+				915825B8212BD43500D617CE /* ActDetailViewController.swift */,
+			);
+			path = ActDetail;
+			sourceTree = "<group>";
+		};
 		91FA1C0D212A5FB100D02550 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +193,8 @@
 		91FA1C2C212A674000D02550 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				915825B7212BD41900D617CE /* ActDetail */,
+				91FA1C3E212A8B3900D02550 /* Act */,
 				91FA1C2D212A676700D02550 /* News */,
 			);
 			path = Pages;
@@ -197,6 +222,18 @@
 				91FA1C22212A5FB200D02550 /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		91FA1C3E212A8B3900D02550 /* Act */ = {
+			isa = PBXGroup;
+			children = (
+				91FA1C3F212A8B4D00D02550 /* ActMap.storyboard */,
+				91FA1C41212A8B5500D02550 /* ActList.storyboard */,
+				91FA1C43212A8B6300D02550 /* ActMapViewController.swift */,
+				91FA1C45212A8B6C00D02550 /* ActListViewController.swift */,
+				915825B2212BB14C00D617CE /* ActTableViewCell.swift */,
+			);
+			path = Act;
 			sourceTree = "<group>";
 		};
 		FF129051212A823E0082AF9C /* SF Pro */ = {
@@ -360,6 +397,7 @@
 				FF129098212A823F0082AF9C /* SF-Pro-Display-LightItalic.otf in Resources */,
 				FF129099212A823F0082AF9C /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				FF129096212A823F0082AF9C /* SF-Pro-Display-Ultralight.otf in Resources */,
+				91FA1C42212A8B5500D02550 /* ActList.storyboard in Resources */,
 				FF12909A212A823F0082AF9C /* SF-Pro-Display-Black.otf in Resources */,
 				FF1290A2212A823F0082AF9C /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				FF1290A3212A823F0082AF9C /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
@@ -367,6 +405,7 @@
 				FF129092212A823F0082AF9C /* SF-Pro-Text-Regular.otf in Resources */,
 				91FA1C21212A5FB200D02550 /* Assets.xcassets in Resources */,
 				FF12908F212A823F0082AF9C /* SF-Pro-Display-Heavy.otf in Resources */,
+				91FA1C40212A8B4D00D02550 /* ActMap.storyboard in Resources */,
 				FF1290B0212A823F0082AF9C /* SFCompactText-RegularItalic.otf in Resources */,
 				FF129093212A823F0082AF9C /* SF-Pro-Text-Bold.otf in Resources */,
 				FF1290B7212A823F0082AF9C /* SFCompactText-LightItalic.otf in Resources */,
@@ -375,6 +414,7 @@
 				FF1290AB212A823F0082AF9C /* SFCompactDisplay-Medium.otf in Resources */,
 				FF1290AD212A823F0082AF9C /* SFCompactDisplay-Regular.otf in Resources */,
 				FF1290AC212A823F0082AF9C /* SFCompactDisplay-Black.otf in Resources */,
+				915825B5212BD04000D617CE /* ActDetail.storyboard in Resources */,
 				FF1290B1212A823F0082AF9C /* SFCompactText-Light.otf in Resources */,
 				FF1290AF212A823F0082AF9C /* SFCompactText-Semibold.otf in Resources */,
 				FF12908A212A823F0082AF9C /* SF-Pro-Display-Light.otf in Resources */,
@@ -395,7 +435,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				915825B3212BB14C00D617CE /* ActTableViewCell.swift in Sources */,
 				91FA1C32212A67D200D02550 /* NewsViewController.swift in Sources */,
+				91FA1C46212A8B6C00D02550 /* ActListViewController.swift in Sources */,
+				91FA1C44212A8B6300D02550 /* ActMapViewController.swift in Sources */,
+				915825B9212BD43500D617CE /* ActDetailViewController.swift in Sources */,
 				91FA1C1A212A5FB100D02550 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24532L7UMK;
+				DEVELOPMENT_TEAM = 7DQGP7DU26;
 				INFOPLIST_FILE = Cleanify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -551,7 +595,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24532L7UMK;
+				DEVELOPMENT_TEAM = 7DQGP7DU26;
 				INFOPLIST_FILE = Cleanify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
