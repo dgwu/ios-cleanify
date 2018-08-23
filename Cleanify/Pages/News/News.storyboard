@@ -28,58 +28,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5df-fI-RYR">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="311" width="375" height="418"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="203" id="iVN-FE-0vb" userLabel="Headline Table View Cell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="203"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iVN-FE-0vb" id="aPl-o7-vRZ" userLabel="Headline Content View">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="202.66666666666666"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mti-X7-SJw">
-                                                    <rect key="frame" x="15" y="5" width="345" height="192.66666666666666"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judul berita headline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mi-rp-CbH">
-                                                    <rect key="frame" x="32" y="28" width="171" height="22"/>
-                                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="18"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="7Mi-rp-CbH" firstAttribute="top" secondItem="aPl-o7-vRZ" secondAttribute="topMargin" constant="17" id="2oX-kn-DAz"/>
-                                                <constraint firstItem="Mti-X7-SJw" firstAttribute="leading" secondItem="aPl-o7-vRZ" secondAttribute="leading" constant="15" id="Inv-Te-niC"/>
-                                                <constraint firstItem="7Mi-rp-CbH" firstAttribute="leading" secondItem="aPl-o7-vRZ" secondAttribute="leadingMargin" constant="17" id="aMQ-gG-WOu"/>
-                                                <constraint firstAttribute="bottom" secondItem="Mti-X7-SJw" secondAttribute="bottom" constant="5" id="c4s-cP-93I"/>
-                                                <constraint firstItem="Mti-X7-SJw" firstAttribute="top" secondItem="aPl-o7-vRZ" secondAttribute="top" constant="5" id="jzC-rO-NNp"/>
-                                                <constraint firstAttribute="trailing" secondItem="Mti-X7-SJw" secondAttribute="trailing" constant="15" id="tf9-jp-Egx"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="134" id="1Tr-sr-nj8" userLabel="News Table View Cell">
-                                        <rect key="frame" x="0.0" y="231" width="375" height="134"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Tr-sr-nj8" id="eLB-Xg-MnR" userLabel="News Content View">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="133.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judul berita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0L-tW-nLB">
-                                                    <rect key="frame" x="123" y="11" width="98" height="22"/>
+                                                    <rect key="frame" x="123" y="17" width="98" height="22"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deskripsi berita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRo-bo-V2F">
-                                                    <rect key="frame" x="123" y="41" width="88" height="17"/>
+                                                    <rect key="frame" x="123" y="47" width="88" height="17"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wYL-5q-PcC">
-                                                    <rect key="frame" x="15" y="11" width="100" height="100"/>
+                                                    <rect key="frame" x="15" y="17" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="LxO-GX-5Nm"/>
                                                         <constraint firstAttribute="height" constant="100" id="hsW-D6-uk7"/>
@@ -88,16 +61,33 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="wYL-5q-PcC" firstAttribute="top" secondItem="eLB-Xg-MnR" secondAttribute="topMargin" id="16H-bI-iyv"/>
+                                                <constraint firstItem="wYL-5q-PcC" firstAttribute="leading" secondItem="eLB-Xg-MnR" secondAttribute="leadingMargin" id="6Pe-0f-xz0"/>
                                                 <constraint firstItem="d0L-tW-nLB" firstAttribute="leading" secondItem="wYL-5q-PcC" secondAttribute="trailing" constant="8" id="72e-Ko-xZQ"/>
+                                                <constraint firstItem="d0L-tW-nLB" firstAttribute="leading" secondItem="wYL-5q-PcC" secondAttribute="trailing" constant="8" id="A2D-PC-LPk"/>
                                                 <constraint firstItem="d0L-tW-nLB" firstAttribute="top" secondItem="eLB-Xg-MnR" secondAttribute="topMargin" id="NIF-ar-gP8"/>
                                                 <constraint firstItem="oRo-bo-V2F" firstAttribute="leading" secondItem="wYL-5q-PcC" secondAttribute="trailing" constant="8" id="bZ2-Id-W4u"/>
                                                 <constraint firstItem="wYL-5q-PcC" firstAttribute="leading" secondItem="eLB-Xg-MnR" secondAttribute="leadingMargin" id="bvN-uM-ibM"/>
+                                                <constraint firstItem="wYL-5q-PcC" firstAttribute="top" secondItem="eLB-Xg-MnR" secondAttribute="topMargin" constant="6" id="cd6-Sn-15O"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wYL-5q-PcC" secondAttribute="bottom" constant="6" id="eha-P5-YR1"/>
                                                 <constraint firstItem="oRo-bo-V2F" firstAttribute="top" secondItem="d0L-tW-nLB" secondAttribute="bottom" constant="8" id="lnU-Fe-PYa"/>
+                                                <constraint firstItem="d0L-tW-nLB" firstAttribute="top" secondItem="eLB-Xg-MnR" secondAttribute="topMargin" constant="6" id="pIT-0o-35u"/>
+                                                <constraint firstItem="d0L-tW-nLB" firstAttribute="leading" secondItem="wYL-5q-PcC" secondAttribute="trailing" constant="8" id="uvf-qz-Eef"/>
+                                                <constraint firstItem="oRo-bo-V2F" firstAttribute="top" secondItem="d0L-tW-nLB" secondAttribute="bottom" constant="8" id="vuT-Kl-h4r"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdQ-2f-7Ud">
+                                <rect key="frame" x="15" y="100" width="345" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="0Sh-1C-7BP">
+                                <rect key="frame" x="169" y="272" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.51372549020000002" green="0.58823529409999997" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="M51-NF-UqL"/>
@@ -107,6 +97,10 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="1Ld-8G-vxk"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="pageController" destination="0Sh-1C-7BP" id="ZAY-5g-A9L"/>
+                        <outlet property="scrollView" destination="WdQ-2f-7Ud" id="BEq-5C-aGh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xF-GR-HlD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
