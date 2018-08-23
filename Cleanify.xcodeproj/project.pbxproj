@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91386959212E54CB00FEC746 /* CleanifyApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91386958212E54CB00FEC746 /* CleanifyApi.swift */; };
+		9138695C212E559E00FEC746 /* CleanifyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9138695B212E559E00FEC746 /* CleanifyEvent.swift */; };
 		915825B3212BB14C00D617CE /* ActTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915825B2212BB14C00D617CE /* ActTableViewCell.swift */; };
 		915825B5212BD04000D617CE /* ActDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915825B4212BD04000D617CE /* ActDetail.storyboard */; };
 		915825B9212BD43500D617CE /* ActDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915825B8212BD43500D617CE /* ActDetailViewController.swift */; };
@@ -73,6 +75,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		91386958212E54CB00FEC746 /* CleanifyApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanifyApi.swift; sourceTree = "<group>"; };
+		9138695B212E559E00FEC746 /* CleanifyEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanifyEvent.swift; sourceTree = "<group>"; };
 		915825B2212BB14C00D617CE /* ActTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActTableViewCell.swift; sourceTree = "<group>"; };
 		915825B4212BD04000D617CE /* ActDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActDetail.storyboard; sourceTree = "<group>"; };
 		915825B8212BD43500D617CE /* ActDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActDetailViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9138695A212E555F00FEC746 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9138695B212E559E00FEC746 /* CleanifyEvent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		915825B7212BD41900D617CE /* ActDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +191,7 @@
 		91FA1C18212A5FB100D02550 /* Cleanify */ = {
 			isa = PBXGroup;
 			children = (
+				9138695A212E555F00FEC746 /* Model */,
 				FF1290BA212A82560082AF9C /* Fonts */,
 				91FA1C33212A67E200D02550 /* Helper */,
 				91FA1C2C212A674000D02550 /* Pages */,
@@ -212,6 +225,7 @@
 		91FA1C33212A67E200D02550 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				91386958212E54CB00FEC746 /* CleanifyApi.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -438,9 +452,11 @@
 				915825B3212BB14C00D617CE /* ActTableViewCell.swift in Sources */,
 				91FA1C32212A67D200D02550 /* NewsViewController.swift in Sources */,
 				91FA1C46212A8B6C00D02550 /* ActListViewController.swift in Sources */,
+				9138695C212E559E00FEC746 /* CleanifyEvent.swift in Sources */,
 				91FA1C44212A8B6300D02550 /* ActMapViewController.swift in Sources */,
 				915825B9212BD43500D617CE /* ActDetailViewController.swift in Sources */,
 				91FA1C1A212A5FB100D02550 /* AppDelegate.swift in Sources */,
+				91386959212E54CB00FEC746 /* CleanifyApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

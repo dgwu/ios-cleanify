@@ -17,7 +17,7 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var eventTableView: UITableView!
-    var selectedEvent = [String: Any]()
+    var selectedEvent: CleanifyEvent?
     
     let dummyEvents = [
         [
@@ -46,6 +46,8 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
         ]
     ]
     
+    var cleanifyEvents = [CleanifyEvent]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +55,22 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.eventTableView.dataSource = self
         self.eventTableView.rowHeight = 300
         
-        setupMap()
+        loadEvents()
+    }
+    
+    func loadEvents() {
+        let cleanifyApi = CleanifyApi()
+        cleanifyApi.fetchEventList { (events) in
+            if let events = events {
+                self.cleanifyEvents = events
+                
+                DispatchQueue.main.async {
+                    self.setupMap()
+                    self.eventTableView.reloadData()
+                }
+                
+            }
+        }
     }
     
     // MARK : Setup Map
@@ -80,29 +97,18 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.locationManager.startUpdatingLocation()
         }
         
-        
-        
         self.mapView.showsUserLocation = true
-        print(self.mapView.userLocation.coordinate.latitude)
-        print(self.mapView.userLocation.coordinate.longitude)
+//        print(self.mapView.userLocation.coordinate.latitude)
+//        print(self.mapView.userLocation.coordinate.longitude)
         
-        for event in dummyEvents {
+        for event in cleanifyEvents {
             let locationPoint = MKPointAnnotation()
-            locationPoint.title = event["title"] as! String
-            locationPoint.subtitle = event["location_desc"] as! String
-            locationPoint.coordinate = CLLocationCoordinate2D(latitude: event["location_latitude"] as! Double,
-                                                              longitude: event["location_longitude"] as! Double)
-            
-            
-            
+            locationPoint.title = event.title
+            locationPoint.subtitle = event.locationDesc
+            locationPoint.coordinate = CLLocationCoordinate2D(latitude: event.locationLatitude,
+                                                              longitude: event.locationLongitude)
             mapView.addAnnotation(locationPoint)
         }
-        
-//        let aeonMallBSD = MKPointAnnotation()
-//        aeonMallBSD.title = "AEON MALL BSD"
-//        aeonMallBSD.subtitle = "subtitle"
-//        aeonMallBSD.coordinate = CLLocationCoordinate2D(latitude: -6.304715, longitude: 106.643997)
-//        mapView.addAnnotation(aeonMallBSD)
     }
     
     // MARK : Actions
@@ -121,7 +127,7 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // MARK : Table View Datasource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.dummyEvents.count
+        return self.cleanifyEvents.count
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 8
@@ -133,10 +139,11 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActCell", for: indexPath) as! ActTableViewCell
+        let event = self.cleanifyEvents[indexPath.section]
         
         cell.eventImageView.image = UIImage.init(named: "Profile Image")
-        cell.eventTitleLabel.text = self.dummyEvents[indexPath.section]["title"] as! String
-        cell.eventDescriptionLabel.text = self.dummyEvents[indexPath.section]["description"] as! String
+        cell.eventTitleLabel.text = event.title
+        cell.eventDescriptionLabel.text = event.description
         
         // add border and color
         cell.backgroundColor = UIColor.white
@@ -152,8 +159,8 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // MARK : Table View Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let dummyEvent = self.dummyEvents[indexPath.section]
-        self.selectedEvent = dummyEvent
+        let event = self.cleanifyEvents[indexPath.section]
+        self.selectedEvent = event
         
         performSegue(withIdentifier: "ToDetail", sender: self)
     }
@@ -163,9 +170,9 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
         if (segue.identifier == "ToDetail") {
             if let destination = segue.destination as? ActDetailViewController {
                 destination.event = self.selectedEvent
-                print("berhasil yey")
+                print("segue to act detail")
             } else {
-                print("failed")
+                print("failed to segue to act detail")
             }
         }
     }
