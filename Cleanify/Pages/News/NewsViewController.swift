@@ -20,7 +20,7 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, UITableViewDat
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
    
     var dummyNews: [CleanifyNew] = [CleanifyNew]()
-    
+    var selectedNews: CleanifyNew?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +84,19 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, UITableViewDat
         cell.NewsImage.image = UIImage(named: "headnews3")
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedNews = dummyNews[indexPath.row]
+        performSegue(withIdentifier: "toNewsDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toNewsDetail"){
+            if let destination = segue.destination as? NewsDetailViewController{
+                destination.selectedNews = self.selectedNews
+            }
+        }
     }
 }
 
