@@ -59,6 +59,8 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func loadEvents() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         let cleanifyApi = CleanifyApi()
         cleanifyApi.fetchEventList { (events) in
             if let events = events {
@@ -67,6 +69,7 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
                 DispatchQueue.main.async {
                     self.setupMap()
                     self.eventTableView.reloadData()
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
                 
             }

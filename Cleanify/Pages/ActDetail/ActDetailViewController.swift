@@ -18,6 +18,7 @@ class ActDetailViewController: UIViewController {
     @IBOutlet weak var eventLocationDescriptionLabel: UILabel!
     
     var event: CleanifyEvent?
+    let cleanifyApi = CleanifyApi()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,27 @@ class ActDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func isLoggedIn() -> Bool {
+        return true
+    }
+    
+    @IBAction func participateEvent() {
+        if (isLoggedIn()) {
+            guard let event = event else { return }
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            self.cleanifyApi.participateEvent(eventId: event.id, userToken: "sejok") { (isDone) in
+                if isDone {
+                    print("its done")
+                    DispatchQueue.main.async {
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    }
+                }
+            }
+        } else {
+            // redirect to login page
+        }
     }
     
 }

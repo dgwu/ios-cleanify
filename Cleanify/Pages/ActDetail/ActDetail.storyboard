@@ -80,6 +80,9 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Participate"/>
+                                                <connections>
+                                                    <action selector="participateEvent" destination="KV3-f7-GNu" eventType="touchUpInside" id="xHK-j4-o8j"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
