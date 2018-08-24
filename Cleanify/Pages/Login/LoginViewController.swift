@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var formView: UIView!
     
-    let loginUrl: String = "https://cleanify.danielgunawan.com/api/getusertoken"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +32,15 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginAction(_ sender: UIButton) {
         var req = [String:Any]()
-        //req["email"] = emailTxt.text
-        //req["password"] = passwordTxt.text
-        doHttpGet(url: "https://cleanify.danielgunawan.com/api/ongoingevents")
+        req["email"] = emailTxt.text
+        req["password"] = passwordTxt.text
+        doHttpPost(url: LOIGN_URL, request: req) { result in
+            if result["isValid"] as! Bool == true {
+                print("result token \(result["user_token"] as! String)")
+                UserDefaults.standard.set(result["user_token"] as! String, forKey: "userToken")
+                UserDefaults.standard.synchronize();
+            }
+        }
     }
     
     /*
