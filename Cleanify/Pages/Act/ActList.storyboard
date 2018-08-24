@@ -24,15 +24,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="znp-5c-o7R">
-                                        <rect key="frame" x="8" y="96" width="359" height="674"/>
+                                        <rect key="frame" x="8" y="150" width="359" height="620"/>
                                     </mapView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottomMargin" secondItem="znp-5c-o7R" secondAttribute="bottom" id="83z-hV-0rp"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="znp-5c-o7R" secondAttribute="trailing" id="KoY-6R-DUb"/>
                                     <constraint firstItem="znp-5c-o7R" firstAttribute="leading" secondItem="efp-cp-ddj" secondAttribute="leadingMargin" id="KpT-2I-q8X"/>
-                                    <constraint firstItem="znp-5c-o7R" firstAttribute="top" secondItem="efp-cp-ddj" secondAttribute="topMargin" id="fCW-RT-Gho"/>
+                                    <constraint firstItem="znp-5c-o7R" firstAttribute="top" secondItem="efp-cp-ddj" secondAttribute="top" constant="150" id="qXz-Sz-AsY"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWd-R9-x7N">
@@ -50,16 +49,16 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xg8-LV-w2m">
-                                                            <rect key="frame" x="15" y="11" width="329" height="197"/>
+                                                            <rect key="frame" x="15" y="11" width="325" height="197"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Event Name]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpB-sX-GQc">
-                                                            <rect key="frame" x="15" y="213" width="329" height="30"/>
+                                                            <rect key="frame" x="15" y="213" width="325" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Deskripsi]" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aA-J6-qLS">
-                                                            <rect key="frame" x="15" y="248" width="329" height="36"/>
+                                                            <rect key="frame" x="15" y="248" width="325" height="36"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -98,12 +97,12 @@
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="DLV-db-wME">
                                 <rect key="frame" x="10" y="108" width="355" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="" image="Maps Icon"/>
                                     <segment title="" image="List Icon"/>
                                 </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="switchView:" destination="GkX-7G-CVp" eventType="valueChanged" id="3Oo-FX-liV"/>
                                 </connections>
@@ -154,6 +153,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QyJ-ca-3Nh">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.5292060375213623" green="0.58613842725753784" blue="0.4470367431640625" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
