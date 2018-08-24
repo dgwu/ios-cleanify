@@ -144,7 +144,7 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActCell", for: indexPath) as! ActTableViewCell
         let event = self.cleanifyEvents[indexPath.section]
         
-        cell.eventImageView.image = UIImage.init(named: "Profile Image")
+        cell.eventImageView.image = UIImage.init(named: "Default Profile Image")
         cell.eventTitleLabel.text = event.title
         cell.eventDescriptionLabel.text = event.description
         

@@ -467,7 +467,6 @@
 				91FA1C1A212A5FB100D02550 /* AppDelegate.swift in Sources */,
 				91386959212E54CB00FEC746 /* CleanifyApi.swift in Sources */,
 				6FAA98AA212FBAEF00389FF3 /* CleanifyNews.swift in Sources */,
-				91FA1C1A212A5FB100D02550 /* AppDelegate.swift in Sources */,
 				6FAA98A7212FB8F200389FF3 /* NewsTableViewCell.swift in Sources */,
 				6FAA98AC212FE3C400389FF3 /* NewsDetailViewController.swift in Sources */,
 			);

@@ -33,7 +33,7 @@ class ActDetailViewController: UIViewController {
         
         self.navigationItem.title = "Act!"
         
-        eventImageView.image = UIImage.init(named: "Profile Image")
+        eventImageView.image = UIImage.init(named: "Default Profile Image")
         eventTitleLabel.text = event.title
         eventDescriptionLabel.text = event.body
         eventDatetimeLabel.text = event.heldAt
