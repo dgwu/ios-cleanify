@@ -8,12 +8,19 @@
 
 import UIKit
 
-class NewsViewController: UIViewController, UIScrollViewDelegate {
+class NewsViewController: UIViewController, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
+   
     
+    
+    @IBOutlet weak var newsTableView: UITableView!
     @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
+    
     var images: [String] = ["headnews0","headnews1","headnews2","headnews3"]
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+   
+    var dummyNews: [CleanifyNew] = [CleanifyNew]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +39,23 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         
         // Do any additional setup after loading the view, typically from a nib.
-         
+        
+        setupTable()
+    }
+    
+    
+    func setupTable() {
+        createDummyNews()
+        self.newsTableView.dataSource = self
+        self.newsTableView.delegate = self
+    }
+    
+    
+    func createDummyNews() {
+        for i in 1...5 {
+            let dummyNew = CleanifyNew(id: i, title: "News \(i)", body: "hulala", description: "desc \(i)", photoUrl: "bz", createdAt: "2018-08-24")
+            self.dummyNews.append(dummyNew)
+        }
         
     }
     
@@ -42,10 +65,25 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        var pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
+        let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
         pageController.currentPage = Int(pageNumber)
         
     }
     
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dummyNews.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsTableViewCell
+        let news = dummyNews[indexPath.row]
+        
+        cell.NewsTitle.text = news.title
+        cell.NewsDesc.text = news.description
+        cell.NewsImage.image = UIImage(named: "headnews3")
+        
+        return cell
+    }
 }
 
