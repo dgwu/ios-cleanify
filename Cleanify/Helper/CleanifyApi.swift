@@ -73,6 +73,7 @@ class CleanifyApi {
                         // decode the JsonDataObject into desired object using Decodable
                         let cleanifyEvents = try JSONDecoder().decode([CleanifyEvent].self, from: jsonData)
                         completion(cleanifyEvents)
+                        return
                     } else {
                         print("gagal translate events")
                     }
