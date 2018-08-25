@@ -17,6 +17,8 @@ class ActDetailViewController: UIViewController {
     @IBOutlet weak var eventDatetimeLabel: UILabel!
     @IBOutlet weak var eventLocationDescriptionLabel: UILabel!
     
+    @IBOutlet weak var eventParticipateButton: UIButton!
+    
     var event: CleanifyEvent?
     let cleanifyApi = CleanifyApi()
     
@@ -24,6 +26,11 @@ class ActDetailViewController: UIViewController {
         super.viewDidLoad()
 
         displayDetail()
+        setupButtonView()
+    }
+    
+    func setupButtonView() {
+        self.eventParticipateButton.layer.cornerRadius = 5
     }
     
     func displayDetail() {
@@ -31,7 +38,7 @@ class ActDetailViewController: UIViewController {
             return
         }
         
-        self.navigationItem.title = "Act!"
+        self.navigationItem.title = event.title
         
         eventImageView.image = UIImage.init(named: "Default Profile Image")
         eventTitleLabel.text = event.title

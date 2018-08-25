@@ -25,7 +25,7 @@ class CleanifyApi {
                         }
                     }
                 } catch {
-                    print(error.localizedDescription)
+                    print("Error on requestAndCheckIsValid: \(error.localizedDescription)")
                 }
             }
             completion(nil)
@@ -52,7 +52,7 @@ class CleanifyApi {
                         }
                     }
                 } catch {
-                    print(error.localizedDescription)
+                    print("Error on postAndCheckIsValid: \(error.localizedDescription)")
                 }
             }
             completion(nil)
@@ -78,7 +78,7 @@ class CleanifyApi {
                         print("gagal translate events")
                     }
                 } catch {
-                    print(error.localizedDescription)
+                    print("Error on fetchEventList: \(error.localizedDescription)")
                 }
             }
             

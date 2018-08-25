@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzx-2x-CCN">
-                                <rect key="frame" x="16" y="261" width="343" height="501"/>
+                                <rect key="frame" x="16" y="261" width="343" height="452"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN TO YOUR ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bQ-UG-4ou">
                                         <rect key="frame" x="36.666666666666657" y="17" width="270" height="25.666666666666671"/>
@@ -157,7 +157,7 @@
                                     <constraint firstAttribute="trailing" secondItem="N2F-r8-yvg" secondAttribute="trailing" constant="30" id="zmd-Yv-sEe"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="LRf-Fw-0Cm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cleanify Icon" translatesAutoresizingMaskIntoConstraints="NO" id="LRf-Fw-0Cm">
                                 <rect key="frame" x="50" y="123" width="275" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LRf-Fw-0Cm" secondAttribute="height" multiplier="177:65" id="mEx-cK-zse"/>
@@ -198,8 +198,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ax-Ev-OZE">
                                 <rect key="frame" x="0.0" y="88" width="375" height="220"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Profile Image" translatesAutoresizingMaskIntoConstraints="NO" id="bhh-HG-Kvg">
-                                        <rect key="frame" x="147" y="36" width="81" height="90"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default Profile Image" translatesAutoresizingMaskIntoConstraints="NO" id="bhh-HG-Kvg">
+                                        <rect key="frame" x="122.66666666666669" y="36" width="130" height="130"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jmr-Wv-Ltx">
                                         <rect key="frame" x="151" y="166" width="72" height="33.666666666666657"/>
@@ -271,11 +271,13 @@
             </objects>
             <point key="canvasLocation" x="1679" y="878"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="1LZ-fa-cbs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dSV-Mc-l1x" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile Icon" id="0NF-cx-aWa"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="a7S-tj-UMK">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -334,10 +336,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Group" width="354" height="130"/>
+        <image name="Cleanify Icon" width="354" height="130"/>
+        <image name="Default Profile Image" width="130" height="130"/>
         <image name="Login FB" width="300" height="52"/>
         <image name="Login G+" width="300" height="52"/>
         <image name="Profile Icon" width="25" height="28"/>
-        <image name="Profile Image" width="130" height="130"/>
     </resources>
 </document>

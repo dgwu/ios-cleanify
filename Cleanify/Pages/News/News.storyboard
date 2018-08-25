@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LV5-Cu-07a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y8D-oo-GpO">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -94,7 +94,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="M51-NF-UqL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="News" image="News Icon" selectedImage="News Icon" id="Z4V-tX-TRa"/>
                     <navigationItem key="navigationItem" title="NEWS" id="voV-iE-usl">
                         <barButtonItem key="backBarButtonItem" title="Back" id="1Ld-8G-vxk"/>
                     </navigationItem>
@@ -108,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xF-GR-HlD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1941.5999999999999" y="56.896551724137936"/>
+            <point key="canvasLocation" x="2884" y="56.896551724137936"/>
         </scene>
         <!--News Detail View Controller-->
         <scene sceneID="VmT-9f-2Ya">
@@ -159,18 +158,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2A-gp-UgV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2868" y="56.896551724137936"/>
+            <point key="canvasLocation" x="3810.4000000000001" y="56.896551724137936"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="C9G-w2-PHO">
+        <!--News-->
+        <scene sceneID="gKT-yq-jjH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LV5-Cu-07a" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y8D-oo-GpO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="News" image="News Icon" id="pk2-jg-zvb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UGa-XV-au6">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RFT-hJ-Fe3">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.51372549020000002" green="0.58823529409999997" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.51372549020000002" green="0.58823529409999997" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.52920603749999995" green="0.58613842729999999" blue="0.44703674319999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.52920603749999995" green="0.58613842729999999" blue="0.44703674319999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -180,35 +181,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="m4m-DG-WcZ" kind="relationship" relationship="rootViewController" id="ym7-67-8Qb"/>
+                        <segue destination="NtS-5e-vPG" kind="relationship" relationship="rootViewController" id="jNa-Lt-9bj"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZGI-Zj-Xx3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CUF-GE-0sG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="57"/>
-        </scene>
-        <!--NEWS-->
-        <scene sceneID="khL-fk-Wdi">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="m4m-DG-WcZ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="NEWS" id="a6F-q7-dg8">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="7V6-Yg-4ar"/>
-                    </navigationItem>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gCS-dN-UhJ">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.51372549020000002" green="0.58823529409999997" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="NtS-5e-vPG" kind="relationship" relationship="viewControllers" id="tjy-3x-cfE"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0xT-N9-j68" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="999.20000000000005" y="56.896551724137936"/>
+            <point key="canvasLocation" x="1941.5999999999999" y="56.896551724137936"/>
         </scene>
     </scenes>
     <resources>

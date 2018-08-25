@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="znp-5c-o7R">
-                                        <rect key="frame" x="8" y="150" width="359" height="620"/>
+                                        <rect key="frame" x="8" y="150" width="359" height="571"/>
                                     </mapView>
                                 </subviews>
                                 <constraints>
@@ -124,7 +124,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="35E-A7-JiC"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="mcO-BB-kbH"/>
+                    <navigationItem key="navigationItem" title="ACT" largeTitleDisplayMode="never" id="mcO-BB-kbH"/>
                     <connections>
                         <outlet property="eventTableView" destination="0dG-lZ-EfK" id="J3e-if-hqJ"/>
                         <outlet property="listViewOutlet" destination="dWd-R9-x7N" id="hM7-5t-AJI"/>
@@ -145,11 +145,13 @@
             </objects>
             <point key="canvasLocation" x="2051.1999999999998" y="-73.152709359605907"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Act!-->
         <scene sceneID="coJ-I1-WoF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J7L-hE-Hep" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Act!" image="Act! Icon" id="EWN-Nv-bZK"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QyJ-ca-3Nh">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -170,6 +172,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Act! Icon" width="30" height="28"/>
         <image name="List Icon" width="27" height="23"/>
         <image name="Maps Icon" width="23" height="23"/>
     </resources>

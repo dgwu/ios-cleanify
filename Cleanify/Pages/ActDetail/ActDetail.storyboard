@@ -76,7 +76,7 @@
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOM-2e-v9i">
                                                 <rect key="frame" x="130" y="416.33333333333331" width="115" height="42"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.52920603749999995" green="0.58613842729999999" blue="0.44703674319999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Participate"/>
@@ -119,6 +119,7 @@
                         <outlet property="eventDescriptionLabel" destination="B4P-lS-P3H" id="6Dp-OK-oEz"/>
                         <outlet property="eventImageView" destination="bOK-Qo-tru" id="bkh-r7-e8L"/>
                         <outlet property="eventLocationDescriptionLabel" destination="j2F-dB-ze0" id="5Ch-2c-I3f"/>
+                        <outlet property="eventParticipateButton" destination="yOM-2e-v9i" id="WQv-zd-4aw"/>
                         <outlet property="eventTitleLabel" destination="OiX-Y0-ZIr" id="E3P-gq-pYN"/>
                     </connections>
                 </viewController>
