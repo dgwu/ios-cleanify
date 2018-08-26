@@ -9,6 +9,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var nameLbl: UILabel!
     
     let menuArr:[String] = ["User Information", "Event Participant", "Statistics", "Report Issue", "Settings"]
     @IBOutlet weak var tabView: UITableView!
@@ -17,6 +18,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         tabView.delegate = self
         tabView.dataSource = self
+        
+        doHttpPost(url: USER_DETAIL_URL, request: ["api_token" : getUserToken()]) { (result) in
+            DispatchQueue.main.async {
+                let user = result["user"] as! [String : Any]
+//                print("USER : \(user)")
+//                UserDefaults.standard.set(result["user"], forKey: USER_SESSION)
+//                UserDefaults.standard.synchronize();
+                self.nameLbl.text = "\(user["first_name"] ?? " ") \(user["last_name"] ?? " ")"
+            }
+        }
         // Do any additional setup after loading the view.
     }
 

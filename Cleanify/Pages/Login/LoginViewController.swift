@@ -36,21 +36,17 @@ class LoginViewController: UIViewController {
         req["password"] = passwordTxt.text
         doHttpPost(url: LOIGN_URL, request: req) { result in
             if result["isValid"] as! Bool == true {
-                print("result token \(result["user_token"] as! String)")
-                UserDefaults.standard.set(result["user_token"] as! String, forKey: "userToken")
-                UserDefaults.standard.synchronize();
+                 DispatchQueue.main.async {
+                    print("result token \(result["user_token"] as! String)")
+                    UserDefaults.standard.set(result["user_token"] as! String, forKey: USER_TOKEN)
+                    UserDefaults.standard.synchronize();
+                    let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProfileVC") as? ProfileViewController
+                    self.navigationController?.present(vc!, animated: true)
+                }
             }
         }
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
 }

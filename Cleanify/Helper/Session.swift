@@ -15,3 +15,11 @@ func getUserToken() -> String {
 func setUserToken(userToken: String) {
     return UserDefaults.standard.set(userToken, forKey: USER_TOKEN)
 }
+
+func setUserSession(user: [String : Any]) {
+    UserDefaults.standard.set(user, forKey: USER_SESSION)
+}
+
+func getUserSession() -> [String : Any] {
+    return UserDefaults.standard.dictionary(forKey: USER_SESSION)!
+}
