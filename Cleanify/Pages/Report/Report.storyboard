@@ -217,7 +217,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B15-tz-Rxe">
                                 <rect key="frame" x="16" y="499" width="85" height="85"/>
-                                <state key="normal" image="Upload Photos"/>
+                                <state key="normal" image="Upload Photos Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyR-e4-Eet">
                                 <rect key="frame" x="88" y="680" width="199" height="33"/>
@@ -297,6 +297,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="o7a-KS-zrf"/>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="qUT-5Z-MaU" id="fIL-vA-o5m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnD-X5-FU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -326,6 +329,6 @@
     </scenes>
     <resources>
         <image name="Report Icon" width="28" height="28"/>
-        <image name="Upload Photos" width="85" height="85"/>
+        <image name="Upload Photos Button" width="85" height="85"/>
     </resources>
 </document>

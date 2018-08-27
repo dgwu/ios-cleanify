@@ -10,10 +10,16 @@ import UIKit
 
 class ReportDetailViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    let reportDetailTitle:String? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let reportDetailTitle = reportDetailTitle{
+            titleLabel.text=reportDetailTitle
+        }
     }
 
     override func didReceiveMemoryWarning() {
