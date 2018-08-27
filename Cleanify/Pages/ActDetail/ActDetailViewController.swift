@@ -40,12 +40,20 @@ class ActDetailViewController: UIViewController {
         
         self.navigationItem.title = event.title
         
-        eventImageView.image = UIImage.init(named: "Default Profile Image")
         eventTitleLabel.text = event.title
         eventDescriptionLabel.text = event.body
         eventDatetimeLabel.text = event.heldAt
         
         eventLocationDescriptionLabel.text = event.locationDesc
+        
+        eventImageView.image = UIImage.init(named: "Default Profile Image")
+        GeneralHelper.fetchImage(from: event.photoURL) { (fetchedImage) in
+            if let fetchedImage = fetchedImage {
+                DispatchQueue.main.async {
+                    self.eventImageView.image = fetchedImage
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

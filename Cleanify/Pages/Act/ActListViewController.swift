@@ -142,6 +142,14 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.eventTitleLabel.text = event.title
         cell.eventDescriptionLabel.text = event.description
         
+        GeneralHelper.fetchImage(from: event.photoURL) { (fetchedImage) in
+            if let fetchedImage = fetchedImage {
+                DispatchQueue.main.async {
+                    cell.eventImageView.image = fetchedImage
+                }
+            }
+        }
+        
         // add border and color
         cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.black.cgColor

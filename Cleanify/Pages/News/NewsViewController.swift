@@ -104,6 +104,13 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, UITableViewDat
         cell.NewsTitle.text = news.title
         cell.NewsDesc.text = news.description
         cell.NewsImage.image = UIImage(named: "headnews3")
+        GeneralHelper.fetchImage(from: news.photoUrl) { (fetchedImage) in
+            if let fetchedImage = fetchedImage {
+                DispatchQueue.main.async {
+                    cell.NewsImage.image = fetchedImage
+                }
+            }
+        }
         
         return cell
     }

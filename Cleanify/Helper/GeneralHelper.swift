@@ -22,4 +22,17 @@ class GeneralHelper {
         
         return loadingAlertController
     }
+    
+    static func fetchImage(from urlString: String, completion: @escaping(UIImage?) -> Void) {
+        let imageUrl = URL(string: urlString)!
+        let task = URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
+            if let data = data,
+                let fetchedImage = UIImage(data: data) {
+                completion(fetchedImage)
+                return
+            }
+            completion(nil)
+        }
+        task.resume()
+    }
 }
