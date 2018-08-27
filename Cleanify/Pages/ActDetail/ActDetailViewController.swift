@@ -62,23 +62,40 @@ class ActDetailViewController: UIViewController {
     }
     
     func isLoggedIn() -> Bool {
-        return true
+        let token = getUserToken()
+        
+        if (token != "") {
+            return true
+        } else {
+            return false
+        }
     }
     
     @IBAction func participateEvent() {
         if (isLoggedIn()) {
+            let loadingAlert = GeneralHelper.getLoadingAlert()
+            self.navigationController?.present(loadingAlert, animated: true, completion: nil)
+            
             guard let event = event else { return }
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
             self.cleanifyApi.participateEvent(eventId: event.id, userToken: "sejok") { (isDone) in
                 if isDone {
-                    print("its done")
                     DispatchQueue.main.async {
                         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+//                        loadingAlert.dismiss(animated: true, completion: nil)
+                        loadingAlert.dismiss(animated: true, completion: {
+                            DispatchQueue.main.async {
+                                let notifyAlert = GeneralHelper.getDefaultAlert(message: "Success")
+                                self.navigationController?.present(notifyAlert, animated: true, completion: nil)
+                            }
+                        })
                     }
                 }
             }
         } else {
             // redirect to login page
+            let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginVC") as? LoginViewController
+            self.navigationController?.pushViewController(vc!, animated: true)
         }
     }
     

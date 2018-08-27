@@ -125,11 +125,20 @@
                         <outlet property="eventLocationDescriptionLabel" destination="j2F-dB-ze0" id="5Ch-2c-I3f"/>
                         <outlet property="eventParticipateButton" destination="yOM-2e-v9i" id="WQv-zd-4aw"/>
                         <outlet property="eventTitleLabel" destination="OiX-Y0-ZIr" id="E3P-gq-pYN"/>
+                        <segue destination="y3T-mo-Qf1" kind="show" identifier="ToProfile" id="awK-rM-w4r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ZA-L1-UgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="300" y="-204.67980295566502"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="a67-x6-l1h">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="y3T-mo-Qf1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lxi-Gy-kZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="-466"/>
         </scene>
     </scenes>
     <resources>

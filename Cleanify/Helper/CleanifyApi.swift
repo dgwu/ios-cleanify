@@ -9,8 +9,8 @@
 import Foundation
 
 class CleanifyApi {
-    let baseURL = "http://localhost:8080/api"
-//    let baseURL = "https://cleanify.danielgunawan.com/api"
+//    let baseURL = "http://localhost:8080/api"
+    let baseURL = "https://cleanify.danielgunawan.com/api"
     
     func requestAndCheckIsValid(apiPath: String, completion: @escaping([String:Any]?) -> Void) {
         let requestUrl = URL(string: "\(self.baseURL)/\(apiPath)")!

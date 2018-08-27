@@ -23,6 +23,15 @@ class GeneralHelper {
         return loadingAlertController
     }
     
+    static func getDefaultAlert(message: String) -> UIAlertController {
+        let alertController = UIAlertController.init(title: nil, message: message, preferredStyle: .alert)
+        let closeButton = UIAlertAction.init(title: "Ok", style: .cancel, handler: nil)
+        
+        alertController.addAction(closeButton)
+        
+        return alertController
+    }
+    
     static func fetchImage(from urlString: String, completion: @escaping(UIImage?) -> Void) {
         let imageUrl = URL(string: urlString)!
         let task = URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
