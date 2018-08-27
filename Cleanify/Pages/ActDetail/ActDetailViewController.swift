@@ -27,6 +27,7 @@ class ActDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = UIColor.white
 
         displayDetail()
         setupButtonView()

@@ -45,7 +45,6 @@ class CleanifyApi {
             if let data = data {
                 do {
                     if let responseDictionary =  try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                        print(responseDictionary)
                         if let isValid = responseDictionary["isValid"] as? Bool, isValid {
                             completion(responseDictionary)
                             return
