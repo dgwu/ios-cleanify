@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		651C9AC9212D8180008DA681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651C9AC8212D8180008DA681 /* Main.storyboard */; };
 		651C9ACB212E71A8008DA681 /* ReportDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651C9ACA212E71A8008DA681 /* ReportDetailTableViewCell.swift */; };
 		651C9ACD212FA962008DA681 /* AddReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651C9ACC212FA962008DA681 /* AddReportViewController.swift */; };
 		651C9ACF21339470008DA681 /* ReportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651C9ACE21339470008DA681 /* ReportDetailViewController.swift */; };
@@ -72,7 +71,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		651C9AC8212D8180008DA681 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		651C9ACA212E71A8008DA681 /* ReportDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailTableViewCell.swift; sourceTree = "<group>"; };
 		651C9ACC212FA962008DA681 /* AddReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportViewController.swift; sourceTree = "<group>"; };
 		651C9ACE21339470008DA681 /* ReportDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailViewController.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 		91FA1C2C212A674000D02550 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				651C9AC8212D8180008DA681 /* Main.storyboard */,
 				651D43DB212A8B46009A0C12 /* Report */,
 				91FA1C2D212A676700D02550 /* News */,
 			);
@@ -392,7 +389,6 @@
 				FF1290A3212A823F0082AF9C /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
 				91FA1C24212A5FB200D02550 /* LaunchScreen.storyboard in Resources */,
 				FF129092212A823F0082AF9C /* SF-Pro-Text-Regular.otf in Resources */,
-				651C9AC9212D8180008DA681 /* Main.storyboard in Resources */,
 				91FA1C21212A5FB200D02550 /* Assets.xcassets in Resources */,
 				FF12908F212A823F0082AF9C /* SF-Pro-Display-Heavy.otf in Resources */,
 				FF1290B0212A823F0082AF9C /* SFCompactText-RegularItalic.otf in Resources */,
