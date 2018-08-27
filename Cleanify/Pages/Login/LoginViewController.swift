@@ -40,8 +40,7 @@ class LoginViewController: UIViewController {
                     print("result token \(result["user_token"] as! String)")
                     UserDefaults.standard.set(result["user_token"] as! String, forKey: USER_TOKEN)
                     UserDefaults.standard.synchronize();
-                    let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProfileVC") as? ProfileViewController
-                    self.navigationController?.present(vc!, animated: true)
+                    self.navigationController?.popViewController(animated: true)
                 }
             }
         }
