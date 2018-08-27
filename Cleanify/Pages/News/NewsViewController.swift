@@ -20,6 +20,7 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, UITableViewDat
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
    
     var dummyNews: [CleanifyNew] = [CleanifyNew]()
+    var newsList: [CleanifyNew] = [CleanifyNew]()
     var selectedNews: CleanifyNew?
     
     override func viewDidLoad() {
@@ -41,11 +42,32 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, UITableViewDat
         // Do any additional setup after loading the view, typically from a nib.
         
         setupTable()
+        loadNews()
     }
     
     
+    
+    func loadNews() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        let loadingAlert = GeneralHelper.getLoadingAlert()
+        self.navigationController?.present(loadingAlert, animated: true, completion: nil)
+        
+        let cleanifyApi = CleanifyApi()
+        cleanifyApi.fetchNewsList { (newsList) in
+            if let newsList = newsList {
+                self.newsList = newsList
+                
+                DispatchQueue.main.async {
+                    self.newsTableView.reloadData()
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    loadingAlert.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
     func setupTable() {
-        createDummyNews()
+//        createDummyNews()
         self.newsTableView.dataSource = self
         self.newsTableView.delegate = self
     }
@@ -72,12 +94,12 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, UITableViewDat
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyNews.count
+        return newsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsTableViewCell
-        let news = dummyNews[indexPath.row]
+        let news = newsList[indexPath.row]
         
         cell.NewsTitle.text = news.title
         cell.NewsDesc.text = news.description
@@ -87,7 +109,7 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedNews = dummyNews[indexPath.row]
+        selectedNews = newsList[indexPath.row]
         performSegue(withIdentifier: "toNewsDetail", sender: self)
     }
     

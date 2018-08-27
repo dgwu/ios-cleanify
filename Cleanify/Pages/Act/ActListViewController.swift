@@ -35,14 +35,6 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
             "location_desc" : "BRANZ BSD",
             "location_latitude" : -6.3017287,
             "location_longitude" : 106.642002,
-        ],
-        [
-            "title" : "another test 3",
-            "photo_url" : "uhuy",
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "location_desc" : "BRANZ BSD",
-            "location_latitude" : -6.3017287,
-            "location_longitude" : 106.642001,
         ]
     ]
     
@@ -60,6 +52,8 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func loadEvents() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        let loadingAlert = GeneralHelper.getLoadingAlert()
+        self.navigationController?.present(loadingAlert, animated: true, completion: nil)
         
         let cleanifyApi = CleanifyApi()
         cleanifyApi.fetchEventList { (events) in
@@ -70,8 +64,8 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.setupMap()
                     self.eventTableView.reloadData()
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    loadingAlert.dismiss(animated: true, completion: nil)
                 }
-                
             }
         }
     }
