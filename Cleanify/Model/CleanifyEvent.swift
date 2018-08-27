@@ -18,6 +18,7 @@ struct CleanifyEvent: Codable {
     let locationLatitude: Double
     let locationLongitude: Double
     let photoURL: String
+    var isParticipated: Bool
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -29,5 +30,6 @@ struct CleanifyEvent: Codable {
         case locationLatitude = "location_latitude"
         case locationLongitude = "location_longitude"
         case photoURL = "photo_url"
+        case isParticipated = "is_participated"
     }
 }

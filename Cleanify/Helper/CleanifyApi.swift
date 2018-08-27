@@ -33,6 +33,33 @@ class CleanifyApi {
         task.resume()
     }
     
+    func requestAndCheckIsValidWithQueries(apiPath: String, queries: [String:String]?, completion: @escaping([String:Any]?) -> Void) {
+        let baseURL = URL(string: "\(self.baseURL)/\(apiPath)")!
+        var requestUrl = baseURL
+        
+        if let queries = queries, queries.count > 0 {
+            requestUrl = baseURL.withQueries(queries)!
+        }
+        
+        let task = URLSession.shared.dataTask(with: requestUrl) { (data, response, error) in
+            if let data = data {
+                do {
+                    if let responseDictionary =  try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        print(responseDictionary)
+                        if let isValid = responseDictionary["isValid"] as? Bool, isValid {
+                            completion(responseDictionary)
+                            return
+                        }
+                    }
+                } catch {
+                    print("Error on requestAndCheckIsValid: \(error.localizedDescription)")
+                }
+            }
+            completion(nil)
+        }
+        task.resume()
+    }
+    
     func postAndCheckIsValid(apiPath: String, parameters: [String: Any], completion: @escaping([String:Any]?) -> Void) {
         let requestURL = URL(string: "\(self.baseURL)/\(apiPath)")!
         var request = URLRequest(url: requestURL)
@@ -64,6 +91,35 @@ class CleanifyApi {
         let apiPath = "ongoingevents"
         
         requestAndCheckIsValid(apiPath: apiPath) { (responseDictionary) in
+            if let responseDictionary = responseDictionary {
+                do {
+                    if let events = responseDictionary["events"] as? [[String : Any]] {
+                        // turn dictionary into data JsonDataObject
+                        let jsonData = try JSONSerialization.data(withJSONObject: events, options: JSONSerialization.WritingOptions.sortedKeys)
+                        
+                        // decode the JsonDataObject into desired object using Decodable
+                        let cleanifyEvents = try JSONDecoder().decode([CleanifyEvent].self, from: jsonData)
+                        completion(cleanifyEvents)
+                        return
+                    } else {
+                        print("gagal translate events")
+                    }
+                } catch {
+                    print("Error on fetchEventList: \(error.localizedDescription)")
+                }
+            }
+            completion(nil)
+        }
+    }
+    
+    func fetchEventListWithUser(completion: @escaping([CleanifyEvent]?) -> Void) {
+        let apiPath = "ongoingevents"
+        
+        let queries = [
+            "api_token" : getUserToken()
+        ]
+        
+        requestAndCheckIsValidWithQueries(apiPath: apiPath, queries: queries) { (responseDictionary) in
             if let responseDictionary = responseDictionary {
                 do {
                     if let events = responseDictionary["events"] as? [[String : Any]] {

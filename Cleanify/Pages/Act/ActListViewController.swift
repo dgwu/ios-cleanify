@@ -9,67 +9,75 @@
 import UIKit
 import MapKit
 
-class ActListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate, CLLocationManagerDelegate {
+class ActListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate, CLLocationManagerDelegate, ActDetailViewControllerDelegate {
+    
+    
     @IBOutlet weak var mapViewOutlet: UIView!
     @IBOutlet weak var listViewOutlet: UIView!
-    
-    var locationManager = CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
-    
     @IBOutlet weak var eventTableView: UITableView!
+    
     var selectedEvent: CleanifyEvent?
-    
-    let dummyEvents = [
-        [
-            "title" : "another test",
-            "photo_url" : "uhuy",
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "location_desc" : "AEON MALL BSD",
-            "location_latitude" : -6.304715,
-            "location_longitude" : 106.643997,
-        ],
-        [
-            "title" : "another test 2",
-            "photo_url" : "uhuy",
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "location_desc" : "BRANZ BSD",
-            "location_latitude" : -6.3017287,
-            "location_longitude" : 106.642002,
-        ]
-    ]
-    
+    var locationManager = CLLocationManager()
     var cleanifyEvents = [CleanifyEvent]()
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(loadEvents), for: .valueChanged)
+        refreshControl.tintColor = UIColor.gray
+        return refreshControl
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.eventTableView.delegate = self
         self.eventTableView.dataSource = self
-//        self.eventTableView.rowHeight = 270
         self.eventTableView.rowHeight = UITableViewAutomaticDimension
         self.eventTableView.estimatedRowHeight = 270
         
         loadEvents()
+        self.eventTableView.addSubview(self.refreshControl)
     }
     
-    func loadEvents() {
+    override func viewDidAppear(_ animated: Bool) {
+        self.eventTableView.reloadData()
+    }
+    
+    @objc func loadEvents() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         let loadingAlert = GeneralHelper.getLoadingAlert()
         self.navigationController?.present(loadingAlert, animated: true, completion: nil)
         
         let cleanifyApi = CleanifyApi()
-        cleanifyApi.fetchEventList { (events) in
-            if let events = events {
-                self.cleanifyEvents = events
-                
+        if (isUserLoggedIn()) {
+            cleanifyApi.fetchEventListWithUser { (events) in
+                if let events = events {
+                    self.cleanifyEvents = events
+                }
                 DispatchQueue.main.async {
-                    self.setupMap()
-                    self.eventTableView.reloadData()
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    self.setupView()
+                    loadingAlert.dismiss(animated: true, completion: nil)
+                }
+            }
+        } else {
+            cleanifyApi.fetchEventList { (events) in
+                if let events = events {
+                    self.cleanifyEvents = events
+                }
+                DispatchQueue.main.async {
+                    self.setupView()
                     loadingAlert.dismiss(animated: true, completion: nil)
                 }
             }
         }
+    }
+    
+    func setupView() {
+        self.setupMap()
+        self.eventTableView.reloadData()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        self.refreshControl.endRefreshing()
     }
     
     // MARK : Setup Map
@@ -154,12 +162,11 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // add border and color
         cell.backgroundColor = UIColor.white
-        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderColor = (event.isParticipated) ? GeneralHelper.getActiveGreen().cgColor : UIColor.black.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
 
-        
         return cell
     }
     
@@ -176,11 +183,22 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ToDetail") {
             if let destination = segue.destination as? ActDetailViewController {
+                destination.delegate = self
                 destination.event = self.selectedEvent
                 print("segue to act detail")
             } else {
                 print("failed to segue to act detail")
             }
+        }
+    }
+    
+    // MARK : Event Detail Delegate
+    func updateEvent(event: CleanifyEvent) {
+        let indexPath = self.eventTableView.indexPathForSelectedRow
+        
+        if let indexPath = indexPath {
+            self.cleanifyEvents[indexPath.section] = event
+            print(event.isParticipated)
         }
     }
 }

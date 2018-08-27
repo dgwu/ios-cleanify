@@ -44,4 +44,11 @@ class GeneralHelper {
         }
         task.resume()
     }
+    
+    static func getCleanifyGreen() -> UIColor {
+        return #colorLiteral(red: 0.5152163506, green: 0.5884165168, blue: 0.4317173958, alpha: 1)
+    }
+    static func getActiveGreen() -> UIColor {
+        return #colorLiteral(red: 0, green: 0.5628422499, blue: 0.3188166618, alpha: 1)
+    }
 }

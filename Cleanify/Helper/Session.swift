@@ -15,3 +15,13 @@ func getUserToken() -> String {
 func setUserToken(userToken: String) {
     return UserDefaults.standard.set(userToken, forKey: USER_TOKEN)
 }
+
+func isUserLoggedIn() -> Bool {
+    let token = getUserToken()
+    
+    if (token != "") {
+        return true
+    } else {
+        return false
+    }
+}

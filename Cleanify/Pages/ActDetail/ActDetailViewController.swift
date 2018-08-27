@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+protocol ActDetailViewControllerDelegate {
+    func updateEvent(event: CleanifyEvent)
+}
 class ActDetailViewController: UIViewController {
 
     
@@ -20,6 +22,7 @@ class ActDetailViewController: UIViewController {
     @IBOutlet weak var eventParticipateButton: UIButton!
     
     var event: CleanifyEvent?
+    var delegate: ActDetailViewControllerDelegate?
     let cleanifyApi = CleanifyApi()
     
     override func viewDidLoad() {
@@ -31,10 +34,14 @@ class ActDetailViewController: UIViewController {
     
     func setupButtonView() {
         self.eventParticipateButton.layer.cornerRadius = 5
+        
+        if let event = self.event, event.isParticipated {
+            self.eventParticipateButton.isHidden = true
+        }
     }
     
     func displayDetail() {
-        guard let event = event else {
+        guard let event = self.event else {
             return
         }
         
@@ -78,7 +85,7 @@ class ActDetailViewController: UIViewController {
             
             guard let event = event else { return }
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            self.cleanifyApi.participateEvent(eventId: event.id, userToken: "sejok") { (isDone) in
+            self.cleanifyApi.participateEvent(eventId: event.id, userToken: getUserToken()) { (isDone) in
                 if isDone {
                     DispatchQueue.main.async {
                         UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -87,6 +94,9 @@ class ActDetailViewController: UIViewController {
                             DispatchQueue.main.async {
                                 let notifyAlert = GeneralHelper.getDefaultAlert(message: "Success")
                                 self.navigationController?.present(notifyAlert, animated: true, completion: nil)
+                                self.event?.isParticipated = true
+                                self.delegate?.updateEvent(event: self.event!)
+                                self.setupButtonView()
                             }
                         })
                     }
