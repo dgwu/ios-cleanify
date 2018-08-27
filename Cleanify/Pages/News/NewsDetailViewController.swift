@@ -25,7 +25,7 @@ class NewsDetailViewController: UIViewController {
     func setupView(){
         if let news = selectedNews {
             newsTitle.text = news.title
-            newsDesc.text = news.description
+            newsDesc.text = news.body
             newsImage.image = UIImage(named:"headnews3")
             
             GeneralHelper.fetchImage(from: news.photoUrl) { (fetchedImage) in
