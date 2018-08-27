@@ -21,17 +21,18 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tabView.delegate = self
         tabView.dataSource = self
         navigationItem.backBarButtonItem?.tintColor = UIColor.white
-//        tabBarController.delegate = self
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         if let indexPath = tabView.indexPathForSelectedRow {
             tabView.deselectRow(at: indexPath, animated: true)
         }
-        
+        let loadingAlert = GeneralHelper.getLoadingAlert()
+        self.navigationController?.present(loadingAlert, animated: true, completion: nil)
         doHttpPost(url: USER_DETAIL_URL, request: ["api_token" : getUserToken()]) { (result) in
             DispatchQueue.main.async {
+                loadingAlert.dismiss(animated: true, completion: nil)
                 if result["isValid"] as! Bool == true {
                     self.dummyView.isHidden = true
                     let user = result["user"] as! [String : Any]
@@ -69,6 +70,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 
+    @IBAction func gotToSignIn(_ sender: UIButton) {let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginVC") as? LoginViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    @IBAction func unwindToProfile(segue: UIStoryboardSegue) {
+        
+    }
     /*
      // MARK: - Navigation
      

@@ -29,6 +29,8 @@
 		91FA1C42212A8B5500D02550 /* ActList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FA1C41212A8B5500D02550 /* ActList.storyboard */; };
 		91FA1C44212A8B6300D02550 /* ActMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA1C43212A8B6300D02550 /* ActMapViewController.swift */; };
 		91FA1C46212A8B6C00D02550 /* ActListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA1C45212A8B6C00D02550 /* ActListViewController.swift */; };
+		DDA9352F2133CB17003C6542 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9352E2133CB17003C6542 /* MainViewController.swift */; };
+		DDA935312133E055003C6542 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA935302133E055003C6542 /* SignUpViewController.swift */; };
 		DDD8DE0B212E748900587E3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8DE09212E748900587E3F /* LoginViewController.swift */; };
 		DDD8DE0E212E74EB00587E3F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD8DE0D212E74EB00587E3F /* Login.storyboard */; };
 		DDD8DE13212E7F6800587E3F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8DE12212E7F6800587E3F /* API.swift */; };
@@ -114,6 +116,8 @@
 		91FA1C41212A8B5500D02550 /* ActList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActList.storyboard; sourceTree = "<group>"; };
 		91FA1C43212A8B6300D02550 /* ActMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActMapViewController.swift; sourceTree = "<group>"; };
 		91FA1C45212A8B6C00D02550 /* ActListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActListViewController.swift; sourceTree = "<group>"; };
+		DDA9352E2133CB17003C6542 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DDA935302133E055003C6542 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DDD8DE09212E748900587E3F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DDD8DE0D212E74EB00587E3F /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		DDD8DE12212E7F6800587E3F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 			children = (
 				91FA1C22212A5FB200D02550 /* LaunchScreen.storyboard */,
 				91A117952131550F00A817BB /* Main.storyboard */,
+				DDA9352E2133CB17003C6542 /* MainViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				DDD8DE09212E748900587E3F /* LoginViewController.swift */,
 				DDD8DE1C212FBC1200587E3F /* ProfileViewController.swift */,
 				DDD8DE1E212FBEF300587E3F /* ProfileViewCell.swift */,
+				DDA935302133E055003C6542 /* SignUpViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -529,10 +535,12 @@
 				DDD8DE1F212FBEF300587E3F /* ProfileViewCell.swift in Sources */,
 				91FA1C1A212A5FB100D02550 /* AppDelegate.swift in Sources */,
 				91386959212E54CB00FEC746 /* CleanifyApi.swift in Sources */,
+				DDA935312133E055003C6542 /* SignUpViewController.swift in Sources */,
 				6FAA98AA212FBAEF00389FF3 /* CleanifyNews.swift in Sources */,
 				6FAA98A7212FB8F200389FF3 /* NewsTableViewCell.swift in Sources */,
 				6FAA98AC212FE3C400389FF3 /* NewsDetailViewController.swift in Sources */,
 				651D43DD212A8B5F009A0C12 /* ReportViewController.swift in Sources */,
+				DDA9352F2133CB17003C6542 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
