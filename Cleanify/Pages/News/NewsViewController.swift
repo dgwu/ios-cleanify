@@ -70,6 +70,8 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, UITableViewDat
 //        createDummyNews()
         self.newsTableView.dataSource = self
         self.newsTableView.delegate = self
+        self.newsTableView.rowHeight = UITableViewAutomaticDimension
+        self.newsTableView.estimatedRowHeight = 90
     }
     
     

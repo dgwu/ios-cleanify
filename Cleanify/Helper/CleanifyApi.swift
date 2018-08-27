@@ -87,11 +87,10 @@ class CleanifyApi {
     
     func fetchNewsList(completion: @escaping([CleanifyNew]?) -> Void) {
         let apiPath = "latestnews"
-        print("kepanggil weh")
+        
         requestAndCheckIsValid(apiPath: apiPath) { (responseDictionary) in
             if let responseDictionary = responseDictionary {
                 do {
-                    print(responseDictionary)
                     if let events = responseDictionary["news"] as? [[String : Any]] {
                         // turn dictionary into data JsonDataObject
                         let jsonData = try JSONSerialization.data(withJSONObject: events, options: JSONSerialization.WritingOptions.sortedKeys)
