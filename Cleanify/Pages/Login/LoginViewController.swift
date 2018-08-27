@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
         formView.layer.shadowOpacity = 0.7
         formView.layer.shadowOffset = CGSize.zero
         formView.layer.shadowRadius = 5
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         // Do any additional setup after loading the view.
     }
     
@@ -32,20 +33,23 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginAction(_ sender: UIButton) {
         var req = [String:Any]()
+        // let loadingAlert = GeneralHelper.getLoadingAlert()
+        // self.navigationController?.present(loadingAlert, animated: true, completion: nil)
         req["email"] = emailTxt.text
         req["password"] = passwordTxt.text
         doHttpPost(url: LOIGN_URL, request: req) { result in
-            if result["isValid"] as! Bool == true {
-                 DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                //loadingAlert.dismiss(animated: true, completion: nil)
+                if result["isValid"] as! Bool == true {
                     print("result token \(result["user_token"] as! String)")
                     UserDefaults.standard.set(result["user_token"] as! String, forKey: USER_TOKEN)
                     UserDefaults.standard.synchronize();
                     self.navigationController?.popViewController(animated: true)
+                } else {
+                    let msgAlert = GeneralHelper.getDefaultAlert(message: "Wrong Email or Password")
+                    self.present(msgAlert, animated: true, completion: nil)
                 }
             }
         }
     }
-    
-
-    
 }

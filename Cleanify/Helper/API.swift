@@ -41,7 +41,6 @@ func doHttpPost(url: String, request: [String : Any], completion: @escaping (_ r
     let task = session.dataTask(with: request as URLRequest, completionHandler: {
         (data, response, error) in
         if let data = data, let resultString = String.init(data: data, encoding: String.Encoding.utf8) {
-            print("result string = \(resultString)")
             completion(convertToDictionary(text: resultString)!)
         }
     })
