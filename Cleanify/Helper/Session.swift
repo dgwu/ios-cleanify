@@ -9,7 +9,7 @@
 import Foundation
 
 func getUserToken() -> String {
-    return UserDefaults.standard.string(forKey: USER_TOKEN)!
+    return UserDefaults.standard.string(forKey: USER_TOKEN) ?? ""
 }
 
 func setUserToken(userToken: String) {
