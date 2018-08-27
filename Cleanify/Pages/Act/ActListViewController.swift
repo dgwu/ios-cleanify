@@ -45,7 +45,7 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.eventTableView.delegate = self
         self.eventTableView.dataSource = self
-        self.eventTableView.rowHeight = 300
+        self.eventTableView.rowHeight = 270
         
         loadEvents()
     }
