@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KV3-f7-GNu">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Act Detail View Controller-->
+        <scene sceneID="kb8-S3-WQs">
+            <objects>
+                <viewController id="KV3-f7-GNu" customClass="ActDetailViewController" customModule="Cleanify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bs4-8B-W0e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Viz-Lv-eeK">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3tS-Wa-fNc">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="458.33333333333331"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bOK-Qo-tru">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="243.66666666666666"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[EVENT NAME]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiX-Y0-ZIr">
+                                                <rect key="frame" x="15" y="258.66666666666669" width="345" height="31.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Description]" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4P-lS-P3H">
+                                                <rect key="frame" x="15" y="305" width="345" height="20.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rib-9c-7a0">
+                                                <rect key="frame" x="15" y="340.33333333333331" width="345" height="23"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar Icon" translatesAutoresizingMaskIntoConstraints="NO" id="gd8-CS-gwy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="69" height="23"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Datetime]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xu-km-xrQ">
+                                                        <rect key="frame" x="79" y="0.0" width="266" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="gd8-CS-gwy" firstAttribute="width" secondItem="rib-9c-7a0" secondAttribute="width" multiplier="0.2" id="kZE-Ts-5aG"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6oc-rf-HFm">
+                                                <rect key="frame" x="15" y="378.33333333333331" width="345" height="23"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location Icon" translatesAutoresizingMaskIntoConstraints="NO" id="nex-TE-AR5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="69" height="23"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Location Desc]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2F-dB-ze0">
+                                                        <rect key="frame" x="79" y="0.0" width="266" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="nex-TE-AR5" firstAttribute="width" secondItem="6oc-rf-HFm" secondAttribute="width" multiplier="0.2" id="UGA-y1-WPF"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOM-2e-v9i">
+                                                <rect key="frame" x="130" y="416.33333333333331" width="115" height="42"/>
+                                                <color key="backgroundColor" red="0.52920603749999995" green="0.58613842729999999" blue="0.44703674319999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Participate"/>
+                                                <connections>
+                                                    <action selector="participateEvent" destination="KV3-f7-GNu" eventType="touchUpInside" id="xHK-j4-o8j"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="OiX-Y0-ZIr" secondAttribute="trailing" constant="15" id="9pB-ub-Mfu"/>
+                                            <constraint firstItem="6oc-rf-HFm" firstAttribute="leading" secondItem="3tS-Wa-fNc" secondAttribute="leading" constant="15" id="Jbl-Uy-IdM"/>
+                                            <constraint firstItem="OiX-Y0-ZIr" firstAttribute="leading" secondItem="3tS-Wa-fNc" secondAttribute="leading" constant="15" id="UB9-WB-jrh"/>
+                                            <constraint firstItem="B4P-lS-P3H" firstAttribute="leading" secondItem="3tS-Wa-fNc" secondAttribute="leading" constant="15" id="Z8c-Os-xcY"/>
+                                            <constraint firstAttribute="trailing" secondItem="B4P-lS-P3H" secondAttribute="trailing" constant="15" id="miS-Nf-SjM"/>
+                                            <constraint firstItem="rib-9c-7a0" firstAttribute="leading" secondItem="3tS-Wa-fNc" secondAttribute="leading" constant="15" id="rOh-aa-O0D"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3tS-Wa-fNc" secondAttribute="trailing" id="2hz-wk-ELX"/>
+                                    <constraint firstItem="3tS-Wa-fNc" firstAttribute="width" secondItem="Viz-Lv-eeK" secondAttribute="width" id="PfS-Sc-yOu"/>
+                                    <constraint firstItem="3tS-Wa-fNc" firstAttribute="top" secondItem="Viz-Lv-eeK" secondAttribute="top" id="b2X-L6-kOV"/>
+                                    <constraint firstItem="3tS-Wa-fNc" firstAttribute="leading" secondItem="Viz-Lv-eeK" secondAttribute="leading" id="mUf-kR-MDe"/>
+                                    <constraint firstAttribute="bottom" secondItem="3tS-Wa-fNc" secondAttribute="bottom" id="vH3-L4-NeA"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Viz-Lv-eeK" firstAttribute="leading" secondItem="B97-3j-oBi" secondAttribute="leading" id="TNS-sc-7Ir"/>
+                            <constraint firstItem="B97-3j-oBi" firstAttribute="trailing" secondItem="Viz-Lv-eeK" secondAttribute="trailing" id="ec1-cw-gua"/>
+                            <constraint firstItem="B97-3j-oBi" firstAttribute="bottom" secondItem="Viz-Lv-eeK" secondAttribute="bottom" id="iCW-8Q-eV9"/>
+                            <constraint firstItem="Viz-Lv-eeK" firstAttribute="top" secondItem="B97-3j-oBi" secondAttribute="top" id="mg2-hL-KVK"/>
+                            <constraint firstItem="bOK-Qo-tru" firstAttribute="height" secondItem="bs4-8B-W0e" secondAttribute="height" multiplier="0.3" id="wlj-MA-Bj0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="B97-3j-oBi"/>
+                    </view>
+                    <connections>
+                        <outlet property="eventDatetimeLabel" destination="8Xu-km-xrQ" id="uNi-Nf-G2a"/>
+                        <outlet property="eventDescriptionLabel" destination="B4P-lS-P3H" id="6Dp-OK-oEz"/>
+                        <outlet property="eventImageView" destination="bOK-Qo-tru" id="bkh-r7-e8L"/>
+                        <outlet property="eventLocationDescriptionLabel" destination="j2F-dB-ze0" id="5Ch-2c-I3f"/>
+                        <outlet property="eventParticipateButton" destination="yOM-2e-v9i" id="WQv-zd-4aw"/>
+                        <outlet property="eventTitleLabel" destination="OiX-Y0-ZIr" id="E3P-gq-pYN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ZA-L1-UgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="-204.67980295566502"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Calendar Icon" width="24" height="23"/>
+        <image name="Location Icon" width="17" height="23"/>
+    </resources>
+</document>
