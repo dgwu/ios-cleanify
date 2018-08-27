@@ -16,6 +16,7 @@
 		6FAA98A7212FB8F200389FF3 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAA98A6212FB8F200389FF3 /* NewsTableViewCell.swift */; };
 		6FAA98AA212FBAEF00389FF3 /* CleanifyNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAA98A9212FBAEF00389FF3 /* CleanifyNews.swift */; };
 		6FAA98AC212FE3C400389FF3 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAA98AB212FE3C400389FF3 /* NewsDetailViewController.swift */; };
+		9110FCB92133AA0300F8FC01 /* GeneralHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110FCB82133AA0300F8FC01 /* GeneralHelper.swift */; };
 		91386959212E54CB00FEC746 /* CleanifyApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91386958212E54CB00FEC746 /* CleanifyApi.swift */; };
 		9138695C212E559E00FEC746 /* CleanifyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9138695B212E559E00FEC746 /* CleanifyEvent.swift */; };
 		915825B3212BB14C00D617CE /* ActTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915825B2212BB14C00D617CE /* ActTableViewCell.swift */; };
@@ -101,6 +102,7 @@
 		6FAA98A6212FB8F200389FF3 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		6FAA98A9212FBAEF00389FF3 /* CleanifyNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanifyNews.swift; sourceTree = "<group>"; };
 		6FAA98AB212FE3C400389FF3 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		9110FCB82133AA0300F8FC01 /* GeneralHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHelper.swift; sourceTree = "<group>"; };
 		91386958212E54CB00FEC746 /* CleanifyApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanifyApi.swift; sourceTree = "<group>"; };
 		9138695B212E559E00FEC746 /* CleanifyEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanifyEvent.swift; sourceTree = "<group>"; };
 		915825B2212BB14C00D617CE /* ActTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActTableViewCell.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				DDD8DE12212E7F6800587E3F /* API.swift */,
 				DDD8DE14212E802F00587E3F /* Constant.swift */,
 				DDD8DE20212FFAD900587E3F /* Session.swift */,
+				9110FCB82133AA0300F8FC01 /* GeneralHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				915825B9212BD43500D617CE /* ActDetailViewController.swift in Sources */,
 				DDD8DE1D212FBC1200587E3F /* ProfileViewController.swift in Sources */,
 				DDD8DE0B212E748900587E3F /* LoginViewController.swift in Sources */,
+				9110FCB92133AA0300F8FC01 /* GeneralHelper.swift in Sources */,
 				DDD8DE15212E802F00587E3F /* Constant.swift in Sources */,
 				DDD8DE21212FFAD900587E3F /* Session.swift in Sources */,
 				DDD8DE13212E7F6800587E3F /* API.swift in Sources */,
@@ -677,7 +681,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7DQGP7DU26;
+				DEVELOPMENT_TEAM = HPGVM37VV8;
 				INFOPLIST_FILE = Cleanify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -695,7 +699,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7DQGP7DU26;
+				DEVELOPMENT_TEAM = HPGVM37VV8;
 				INFOPLIST_FILE = Cleanify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -81,7 +81,31 @@ class CleanifyApi {
                     print("Error on fetchEventList: \(error.localizedDescription)")
                 }
             }
-            
+            completion(nil)
+        }
+    }
+    
+    func fetchNewsList(completion: @escaping([CleanifyNew]?) -> Void) {
+        let apiPath = "latestnews"
+        
+        requestAndCheckIsValid(apiPath: apiPath) { (responseDictionary) in
+            if let responseDictionary = responseDictionary {
+                do {
+                    if let events = responseDictionary["news"] as? [[String : Any]] {
+                        // turn dictionary into data JsonDataObject
+                        let jsonData = try JSONSerialization.data(withJSONObject: events, options: JSONSerialization.WritingOptions.sortedKeys)
+                        
+                        // decode the JsonDataObject into desired object using Decodable
+                        let cleanifyNews = try JSONDecoder().decode([CleanifyNew].self, from: jsonData)
+                        completion(cleanifyNews)
+                        return
+                    } else {
+                        print("gagal translate events")
+                    }
+                } catch {
+                    print("Error on fetchEventList: \(error.localizedDescription)")
+                }
+            }
             completion(nil)
         }
     }

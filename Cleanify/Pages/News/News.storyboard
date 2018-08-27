@@ -6,7 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,44 +33,47 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="153" id="1Tr-sr-nj8" userLabel="News Table View Cell" customClass="NewsTableViewCell" customModule="Cleanify" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="153"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="90" id="1Tr-sr-nj8" userLabel="News Table View Cell" customClass="NewsTableViewCell" customModule="Cleanify" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Tr-sr-nj8" id="eLB-Xg-MnR" userLabel="News Content View">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="152.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ipS-Ms-wfH">
-                                                    <rect key="frame" x="8" y="8" width="128" height="128"/>
+                                                    <rect key="frame" x="8" y="8" width="131" height="73.666666666666671"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="128" id="1K4-Xw-9xn"/>
-                                                        <constraint firstAttribute="width" constant="128" id="Ib1-NM-Chw"/>
+                                                        <constraint firstAttribute="width" secondItem="ipS-Ms-wfH" secondAttribute="height" multiplier="16:9" id="zpy-hE-4Os"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tko-Qk-1xl">
-                                                    <rect key="frame" x="144" y="19.000000000000004" width="224" height="23.999999999999996"/>
+                                                    <rect key="frame" x="147" y="8" width="220" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="3ji-jv-bGo"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB8-Gb-hge">
-                                                    <rect key="frame" x="144" y="51" width="208" height="20.333333333333329"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB8-Gb-hge">
+                                                    <rect key="frame" x="147" y="36" width="220" height="45.666666666666657"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="dB8-Gb-hge" firstAttribute="top" secondItem="tko-Qk-1xl" secondAttribute="bottom" constant="8" id="5ZK-Lf-527"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="dB8-Gb-hge" secondAttribute="bottom" constant="8" id="65o-Fx-RBq"/>
-                                                <constraint firstItem="tko-Qk-1xl" firstAttribute="trailing" secondItem="eLB-Xg-MnR" secondAttribute="trailingMargin" constant="8" id="DjW-6B-v5n"/>
-                                                <constraint firstItem="tko-Qk-1xl" firstAttribute="leading" secondItem="ipS-Ms-wfH" secondAttribute="trailing" constant="8" id="Dnq-J1-rVs"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="dB8-Gb-hge" secondAttribute="trailing" constant="8" id="Mgv-Hc-SHM"/>
-                                                <constraint firstItem="ipS-Ms-wfH" firstAttribute="top" secondItem="eLB-Xg-MnR" secondAttribute="top" constant="8" id="Q0f-dN-IhR"/>
-                                                <constraint firstItem="ipS-Ms-wfH" firstAttribute="leading" secondItem="eLB-Xg-MnR" secondAttribute="leading" constant="8" id="QTa-fo-8qs"/>
-                                                <constraint firstAttribute="bottom" secondItem="ipS-Ms-wfH" secondAttribute="bottom" constant="8" id="ie2-Tg-gqN"/>
-                                                <constraint firstItem="tko-Qk-1xl" firstAttribute="top" secondItem="eLB-Xg-MnR" secondAttribute="topMargin" constant="8" id="wct-6l-CL8"/>
-                                                <constraint firstItem="dB8-Gb-hge" firstAttribute="leading" secondItem="ipS-Ms-wfH" secondAttribute="trailing" constant="8" id="zJG-TM-3Su"/>
+                                                <constraint firstItem="ipS-Ms-wfH" firstAttribute="top" secondItem="eLB-Xg-MnR" secondAttribute="top" constant="8" id="4a1-Wi-Mwo"/>
+                                                <constraint firstAttribute="bottom" secondItem="dB8-Gb-hge" secondAttribute="bottom" constant="8" id="A6Q-yx-b5I"/>
+                                                <constraint firstItem="tko-Qk-1xl" firstAttribute="leading" secondItem="ipS-Ms-wfH" secondAttribute="trailing" constant="8" id="Df4-c9-noo"/>
+                                                <constraint firstAttribute="trailing" secondItem="tko-Qk-1xl" secondAttribute="trailing" constant="8" id="JRJ-Sr-EVH"/>
+                                                <constraint firstItem="dB8-Gb-hge" firstAttribute="leading" secondItem="ipS-Ms-wfH" secondAttribute="trailing" constant="8" id="Lhi-R9-V9b"/>
+                                                <constraint firstAttribute="trailing" secondItem="dB8-Gb-hge" secondAttribute="trailing" constant="8" id="NEs-Xb-2nZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="ipS-Ms-wfH" secondAttribute="bottom" constant="8" id="OfU-NT-sGc"/>
+                                                <constraint firstItem="tko-Qk-1xl" firstAttribute="top" secondItem="eLB-Xg-MnR" secondAttribute="top" constant="8" id="Zg6-zt-82o"/>
+                                                <constraint firstItem="dB8-Gb-hge" firstAttribute="top" secondItem="tko-Qk-1xl" secondAttribute="bottom" constant="8" id="aeg-5s-hF5"/>
+                                                <constraint firstItem="ipS-Ms-wfH" firstAttribute="width" secondItem="eLB-Xg-MnR" secondAttribute="width" multiplier="0.35" id="fJX-9O-jeO"/>
+                                                <constraint firstItem="ipS-Ms-wfH" firstAttribute="leading" secondItem="eLB-Xg-MnR" secondAttribute="leading" constant="8" id="qvW-Nu-BQr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
