@@ -26,9 +26,13 @@ class ReportViewController: UIViewController {
         getReportList()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        reportTableView.reloadData()
+    override func viewWillAppear(_ animated: Bool) {
+        getReportList()
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        getReportList()
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

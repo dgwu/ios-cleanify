@@ -75,6 +75,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="68R-bw-Yi6" firstAttribute="leading" secondItem="dNm-sv-qcU" secondAttribute="leadingMargin" id="3T8-f9-jOL"/>
+                                                <constraint firstItem="68R-bw-Yi6" firstAttribute="width" secondItem="dNm-sv-qcU" secondAttribute="height" multiplier="128:149" id="4bx-4G-yMo"/>
                                                 <constraint firstItem="fwM-b6-ER6" firstAttribute="top" secondItem="QYR-RF-jeD" secondAttribute="bottom" id="5An-R1-r49"/>
                                                 <constraint firstItem="fwM-b6-ER6" firstAttribute="leading" secondItem="68R-bw-Yi6" secondAttribute="trailing" constant="8" id="9ky-Bf-exo"/>
                                                 <constraint firstItem="68R-bw-Yi6" firstAttribute="bottom" secondItem="sZS-2x-bHv" secondAttribute="bottom" id="BtS-fc-Toq"/>
@@ -424,6 +425,9 @@
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51372549020000002" green="0.58823529409999997" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
