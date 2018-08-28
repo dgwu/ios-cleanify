@@ -65,6 +65,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if menuArr[indexPath.row] == "Logout" {
             setUserToken(userToken: "")
+            self.dummyView.isHidden = true
             let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginVC") as? LoginViewController
             self.navigationController?.pushViewController(vc!, animated: true)
         }
