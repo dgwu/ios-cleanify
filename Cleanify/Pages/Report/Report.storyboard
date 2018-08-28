@@ -116,7 +116,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Wsi-oI-LDq" kind="show" id="jmX-Ib-VDD"/>
+                                    <segue destination="Wsi-oI-LDq" kind="show" identifier="ToAddReport" id="jmX-Ib-VDD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -133,6 +133,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="REPORT" id="iAe-mt-fk9">
                         <barButtonItem key="backBarButtonItem" title="Back" id="PKa-7s-a7h"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="fv2-Dx-7j8">
+                            <connections>
+                                <action selector="refreshList:" destination="ebE-jA-QsI" id="vA3-JR-DiT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addReportButton" destination="Bxr-q2-iRL" id="cRk-Jw-Yjd"/>

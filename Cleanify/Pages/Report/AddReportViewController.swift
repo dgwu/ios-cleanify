@@ -9,7 +9,12 @@
 import UIKit
 import CoreLocation
 
+protocol AddReportViewControllerDelegate {
+    func represhData()
+}
+
 class AddReportViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
+    
 
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var reportTitleTextField: UITextField!
@@ -19,6 +24,7 @@ class AddReportViewController: UIViewController, CLLocationManagerDelegate, UITe
     @IBOutlet weak var LocationLongitudeLatitudeLabel: UILabel!
     @IBOutlet weak var uniqueView: UIScrollView!
     
+    var delegate: AddReportViewControllerDelegate?
     let reportDescriptionPlaceholderText = "Report Description..."
     let imagePicker = UIImagePickerController()
     let locationManager = CLLocationManager()
@@ -185,17 +191,11 @@ class AddReportViewController: UIViewController, CLLocationManagerDelegate, UITe
                 request["location_latitude"]=String(Latitude ?? 0.0)
         
         CleanifyApi().postReportWithPhoto(photo: chosenImageView.image, apiPath: "postreport", parameters: request) { (result) in
+            print("mashook")
+            self.delegate?.represhData()
             DispatchQueue.main.async {
-                print("tes pop")
                 self.navigationController?.popViewController(animated: true)
             }
-            
-//            if result[0] as! Bool == true{
-//                self.navigationController?.popViewController(animated: true)
-//            }
-//            else{
-//                self.showToast(message: "Fail to create report.")
-//            }
         }
         
     }
@@ -240,4 +240,5 @@ extension AddReportViewController:UIImagePickerControllerDelegate,UINavigationCo
     {
         self.dismiss(animated: true, completion: nil)
     }
+    
 }

@@ -213,7 +213,7 @@ class CleanifyApi {
     }
     
     //create session
-    func postReportWithPhoto(photo : UIImage? , apiPath: String, parameters: [String:String], completionClosure: @escaping([String]) -> Void)  {
+    func postReportWithPhoto(photo : UIImage? , apiPath: String, parameters: [String:String], completionClosure: @escaping(String?) -> Void)  {
         let requestURL = URL(string: "\(self.baseURL)/\(apiPath)")!
         var urlSession : URLSession!
         
@@ -265,6 +265,7 @@ class CleanifyApi {
                 print("empty")
             }
         })
+         completionClosure("SELESAI")
         postDataTask.resume()
     }
     

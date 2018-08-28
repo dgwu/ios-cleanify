@@ -8,10 +8,12 @@
 
 import UIKit
 
-class ReportViewController: UIViewController {
-
+class ReportViewController: UIViewController,  AddReportViewControllerDelegate {
+    
+    
     @IBOutlet weak var addReportButton: UIButton!
     @IBOutlet weak var reportTableView: UITableView!
+    
     
     var reportData:[CleanifyReport]=[CleanifyReport]()
     
@@ -23,52 +25,73 @@ class ReportViewController: UIViewController {
         
         addReportButton.layer.cornerRadius = 22.5
         
-        getReportList()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
         getReportList()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        getReportList()
-//    }
+    @IBAction func refreshList(_ sender: Any) {
+        getReportList()
+    }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    
+        override func viewWillAppear(_ animated: Bool) {
+            print("will")
+    //        getReportList()
+        }
+    
+    override func viewDidAppear(_ animated: Bool) {
+                print("did")
+                getReportList()
     }
     
     func getReportList() {
+        print("getReportList mashook")
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         let cleanifyApi = CleanifyApi()
         cleanifyApi.fetchReportList { (reports) in
-            if let reports = reports {
-                self.reportData = reports
-                DispatchQueue.main.async {
+//            sleep(1)
+            DispatchQueue.main.async {
+                if let reports = reports {
+                    print(reports)
+                    self.reportData = reports
                     self.reportTableView.reloadData()
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
-                
             }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let sender = sender as? IndexPath
-        else{
-            return
-        }
-        let destinationVC = segue.destination as! ReportDetailViewController
-        destinationVC.reportDetailTitle = reportData[sender.row].title
-        destinationVC.reportDetailDescription = reportData[sender.row].description
-        destinationVC.reportDetailPhotoUrl = reportData[sender.row].photo_url
-        destinationVC.reportDetailLocationDescription = reportData[sender.row].location_desc
-        destinationVC.reportDetailLocationLat = reportData[sender.row].location_latitude
-        destinationVC.reportDetailLocationLong = reportData[sender.row].location_longitude
-        destinationVC.reportDetailSubmittedDate = reportData[sender.row].created_at
         
-//        destinationVC.reportDetailDescription = "alskdjflaksdjf,akjsd;lkfja;skldfj;alkdsjf;lka ;lakjsdlfkjasd;lkfjasd lkasjdkflj a;lskdjf;laksjdfl;kj ;lsdkjaf;lkdsjf ;laskjdfklajs dfa sdlkjfasdkf a;slkdfjlaksdjf ;alksdjflkajsd fjsl;kdjf;laskdjfasldfjalksdjf  ;laksdjfl;kasdjf ;laksdjf;klasjdfkls ;alskjdflaksjdf ;lkajs;kldjfl;kjasdf ;lkajs;lkdjf;lkasjdflj ;lkjsal;dkjfl;aksdjf alskdjflaksdjf,akjsd;lkfja;skldfj;alkdsjf;lka ;lakjsdlfkjasd;lkfjasd lkasjdkflj a;lskdjf;laksjdfl;kj ;lsdkjaf;lkdsjf ;laskjdfklajs dfa sdlkjfasdkf a;slkdfjlaksdjf ;alksdjflkajsd fjsl;kdjf;laskdjfasldfjalksdjf  ;laksdjfl;kasdjf ;laksdjf;klasjdfkls ;alskjdflaksjdf ;lkajs;kldjfl;kjasdf ;lkajs;lkdjf;lkasjdflj ;lkjsal;dkjfl;aksdjf alskdjflaksdjf,akjsd;lkfja;skldfj;alkdsjf;lka ;lakjsdlfkjasd;lkfjasd lkasjdkflj a;lskdjf;laksjdfl;kj ;lsdkjaf;lkdsjf ;laskjdfklajs dfa sdlkjfasdkf a;slkdfjlaksdjf ;alksdjflkajsd fjsl;kdjf;laskdjfasldfjalksdjf  ;laksdjfl;kasdjf ;laksdjf;klasjdfkls ;alskjdflaksjdf ;lkajs;kldjfl;kjasdf ;lkajs;lkdjf;lkasjdflj ;lkjsal;dkjfl;aksdjf alskdjflaksdjf,akjsd;lkfja;skldfj;alkdsjf;lka ;lakjsdlfkjasd;lkfjasd lkasjdkflj a;lskdjf;laksjdfl;kj ;lsdkjaf;lkdsjf ;laskjdfklajs dfa sdlkjfasdkf a;slkdfjlaksdjf ;alksdjflkajsd fjsl;kdjf;laskdjfasldfjalksdjf  ;laksdjfl;kasdjf ;laksdjf;klasjdfkls ;alskjdflaksjdf ;lkajs;kldjfl;kjasdf ;lkajs;lkdjf;lkasjdflj ;lkjsal;dkjfl;aksdjf "
+        if let addReportVC = segue.destination as? AddReportViewController {
+            addReportVC.delegate = self
+            print("set delegate")
+        }
+        
+        
+        guard let sender = sender as? IndexPath
+            else{
+                return
+        }
+        
+        if (segue.identifier == "ToAddReport") {
+            let addReportVC = segue.destination as! AddReportViewController
+            addReportVC.delegate = self
+            print("set delegate")
+        } else {
+            let destinationVC = segue.destination as! ReportDetailViewController
+            
+            destinationVC.reportDetailTitle = reportData[sender.row].title
+            destinationVC.reportDetailDescription = reportData[sender.row].description
+            destinationVC.reportDetailPhotoUrl = reportData[sender.row].photo_url
+            destinationVC.reportDetailLocationDescription = reportData[sender.row].location_desc
+            destinationVC.reportDetailLocationLat = reportData[sender.row].location_latitude
+            destinationVC.reportDetailLocationLong = reportData[sender.row].location_longitude
+            destinationVC.reportDetailSubmittedDate = reportData[sender.row].created_at
+        }
     }
     
 }
@@ -101,5 +124,11 @@ extension ReportViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "ReportDetailSegue", sender: indexPath)
     }
+    
+    func represhData() {
+        print("represhing")
+//        self.getReportList()
+    }
+    
 }
 
