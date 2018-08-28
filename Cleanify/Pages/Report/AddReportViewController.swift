@@ -185,8 +185,11 @@ class AddReportViewController: UIViewController, CLLocationManagerDelegate, UITe
                 request["location_latitude"]=String(Latitude ?? 0.0)
         
         CleanifyApi().postReportWithPhoto(photo: chosenImageView.image, apiPath: "postreport", parameters: request) { (result) in
-            print(result)
-            self.navigationController?.popViewController(animated: true)
+            DispatchQueue.main.async {
+                print("tes pop")
+                self.navigationController?.popViewController(animated: true)
+            }
+            
 //            if result[0] as! Bool == true{
 //                self.navigationController?.popViewController(animated: true)
 //            }
