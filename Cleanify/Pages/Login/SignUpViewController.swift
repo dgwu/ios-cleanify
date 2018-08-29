@@ -64,13 +64,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         let nextTage=textField.tag+1;
         // Try to find next responder
-        let nextResponder=textField.superview?.viewWithTag(nextTage) as UIResponder!
+        let nextResponder=textField.superview?.viewWithTag(nextTage) as UIResponder?
         if (nextResponder != nil){
             // Found next responder, so set it.
             nextResponder?.becomeFirstResponder()
         }
-        else
-        {
+        else {
             // Not found, so remove keyboard
             textField.resignFirstResponder()
         }
