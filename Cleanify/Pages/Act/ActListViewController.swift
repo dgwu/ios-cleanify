@@ -162,7 +162,7 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // add border and color
         cell.backgroundColor = UIColor.white
-        cell.layer.borderColor = (event.isParticipated) ? GeneralHelper.getActiveGreen().cgColor : UIColor.black.cgColor
+        cell.layer.borderColor = (event.isParticipated) ? GeneralHelper.getActiveGreen().cgColor : UIColor.lightGray.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
