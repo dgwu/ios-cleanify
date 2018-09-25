@@ -74,7 +74,7 @@ class ActListViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func setupView() {
-        self.setupMap()
+//        self.setupMap()
         self.eventTableView.reloadData()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         self.refreshControl.endRefreshing()
