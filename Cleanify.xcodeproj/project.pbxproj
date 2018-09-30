@@ -33,6 +33,11 @@
 		91FA1C42212A8B5500D02550 /* ActList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FA1C41212A8B5500D02550 /* ActList.storyboard */; };
 		91FA1C44212A8B6300D02550 /* ActMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA1C43212A8B6300D02550 /* ActMapViewController.swift */; };
 		91FA1C46212A8B6C00D02550 /* ActListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA1C45212A8B6C00D02550 /* ActListViewController.swift */; };
+		DD44F3112160EFB9006FD707 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD44F3102160EFB9006FD707 /* TableViewController.swift */; };
+		DD44F3132161362D006FD707 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD44F3122161362D006FD707 /* EventListViewController.swift */; };
+		DD44F31621613983006FD707 /* EventListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD44F31521613983006FD707 /* EventListTableViewCell.swift */; };
+		DD44F318216154AF006FD707 /* IssueListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD44F317216154AF006FD707 /* IssueListTableViewCell.swift */; };
+		DD44F31A216155A9006FD707 /* IssueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD44F319216155A9006FD707 /* IssueListViewController.swift */; };
 		DDA9352F2133CB17003C6542 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9352E2133CB17003C6542 /* MainViewController.swift */; };
 		DDA935312133E055003C6542 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA935302133E055003C6542 /* SignUpViewController.swift */; };
 		DDD8DE0B212E748900587E3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8DE09212E748900587E3F /* LoginViewController.swift */; };
@@ -124,6 +129,11 @@
 		91FA1C41212A8B5500D02550 /* ActList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActList.storyboard; sourceTree = "<group>"; };
 		91FA1C43212A8B6300D02550 /* ActMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActMapViewController.swift; sourceTree = "<group>"; };
 		91FA1C45212A8B6C00D02550 /* ActListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActListViewController.swift; sourceTree = "<group>"; };
+		DD44F3102160EFB9006FD707 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		DD44F3122161362D006FD707 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		DD44F31521613983006FD707 /* EventListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTableViewCell.swift; sourceTree = "<group>"; };
+		DD44F317216154AF006FD707 /* IssueListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListTableViewCell.swift; sourceTree = "<group>"; };
+		DD44F319216155A9006FD707 /* IssueListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListViewController.swift; sourceTree = "<group>"; };
 		DDA9352E2133CB17003C6542 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DDA935302133E055003C6542 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DDD8DE09212E748900587E3F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -304,14 +314,27 @@
 			path = Act;
 			sourceTree = "<group>";
 		};
+		DD44F31421613950006FD707 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DDD8DE1E212FBEF300587E3F /* ProfileViewCell.swift */,
+				DD44F31521613983006FD707 /* EventListTableViewCell.swift */,
+				DD44F317216154AF006FD707 /* IssueListTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		DDD8DE08212E748900587E3F /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				DD44F31421613950006FD707 /* TableViewCell */,
 				DDD8DE0D212E74EB00587E3F /* Login.storyboard */,
 				DDD8DE09212E748900587E3F /* LoginViewController.swift */,
 				DDD8DE1C212FBC1200587E3F /* ProfileViewController.swift */,
-				DDD8DE1E212FBEF300587E3F /* ProfileViewCell.swift */,
 				DDA935302133E055003C6542 /* SignUpViewController.swift */,
+				DD44F3102160EFB9006FD707 /* TableViewController.swift */,
+				DD44F3122161362D006FD707 /* EventListViewController.swift */,
+				DD44F319216155A9006FD707 /* IssueListViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -532,6 +555,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				651C9ACF21339470008DA681 /* ReportDetailViewController.swift in Sources */,
+				DD44F31A216155A9006FD707 /* IssueListViewController.swift in Sources */,
+				DD44F3132161362D006FD707 /* EventListViewController.swift in Sources */,
 				651C9ACB212E71A8008DA681 /* ReportDetailTableViewCell.swift in Sources */,
 				915825B3212BB14C00D617CE /* ActTableViewCell.swift in Sources */,
 				9110FCBB2133E5CF00F8FC01 /* URL+Helpers.swift in Sources */,
@@ -548,14 +573,17 @@
 				DDD8DE13212E7F6800587E3F /* API.swift in Sources */,
 				DDD8DE1F212FBEF300587E3F /* ProfileViewCell.swift in Sources */,
 				91FA1C1A212A5FB100D02550 /* AppDelegate.swift in Sources */,
+				DD44F31621613983006FD707 /* EventListTableViewCell.swift in Sources */,
 				91386959212E54CB00FEC746 /* CleanifyApi.swift in Sources */,
 				DDA935312133E055003C6542 /* SignUpViewController.swift in Sources */,
+				DD44F318216154AF006FD707 /* IssueListTableViewCell.swift in Sources */,
 				6FAA98AA212FBAEF00389FF3 /* CleanifyNews.swift in Sources */,
 				6FAA98A7212FB8F200389FF3 /* NewsTableViewCell.swift in Sources */,
 				6FAA98AC212FE3C400389FF3 /* NewsDetailViewController.swift in Sources */,
 				651D43DD212A8B5F009A0C12 /* ReportViewController.swift in Sources */,
 				DDA9352F2133CB17003C6542 /* MainViewController.swift in Sources */,
 				65C2B5192133A36D009DEECB /* CleanifyReport.swift in Sources */,
+				DD44F3112160EFB9006FD707 /* TableViewController.swift in Sources */,
 				651C9ACD212FA962008DA681 /* AddReportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,7 +721,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7DQGP7DU26;
+				DEVELOPMENT_TEAM = HPGVM37VV8;
 				INFOPLIST_FILE = Cleanify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -711,7 +739,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7DQGP7DU26;
+				DEVELOPMENT_TEAM = HPGVM37VV8;
 				INFOPLIST_FILE = Cleanify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
