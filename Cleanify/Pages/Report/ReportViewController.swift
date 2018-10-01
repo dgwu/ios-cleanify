@@ -8,12 +8,10 @@
 
 import UIKit
 
-class ReportViewController: UIViewController,  AddReportViewControllerDelegate {
+class ReportViewController: UIViewController {
     
-    
-    @IBOutlet weak var addReportButton: UIButton!
+//    @IBOutlet weak var addReportButton: UIButton!
     @IBOutlet weak var reportTableView: UITableView!
-    
     
     var reportData:[CleanifyReport]=[CleanifyReport]()
     
@@ -23,27 +21,19 @@ class ReportViewController: UIViewController,  AddReportViewControllerDelegate {
         reportTableView.delegate = self
         reportTableView.dataSource = self
         
-        addReportButton.layer.cornerRadius = 22.5
+//        addReportButton.layer.cornerRadius = 22.5
         
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
         getReportList()
     }
     
-    @IBAction func refreshList(_ sender: Any) {
+    override func viewDidAppear(_ animated: Bool) {
         getReportList()
     }
     
-    
-    
-        override func viewWillAppear(_ animated: Bool) {
-            print("will")
-    //        getReportList()
-        }
-    
-    override func viewDidAppear(_ animated: Bool) {
-                print("did")
-                getReportList()
+    @IBAction func refresh(_ sender: Any) {
+        getReportList()
     }
     
     func getReportList() {
@@ -52,7 +42,6 @@ class ReportViewController: UIViewController,  AddReportViewControllerDelegate {
         
         let cleanifyApi = CleanifyApi()
         cleanifyApi.fetchReportList { (reports) in
-//            sleep(1)
             DispatchQueue.main.async {
                 if let reports = reports {
                     print(reports)
@@ -65,35 +54,20 @@ class ReportViewController: UIViewController,  AddReportViewControllerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let addReportVC = segue.destination as? AddReportViewController {
-            addReportVC.delegate = self
-            print("set delegate")
-        }
-        
-        
-        guard let sender = sender as? IndexPath
-            else{
-                return
-        }
-        
-        if (segue.identifier == "ToAddReport") {
-            let addReportVC = segue.destination as! AddReportViewController
-            addReportVC.delegate = self
-            print("set delegate")
-        } else {
+        guard let sender = sender as? IndexPath else { return }
+        if segue.identifier == "ReportDetailSegue" {
             let destinationVC = segue.destination as! ReportDetailViewController
             
             destinationVC.reportDetailTitle = reportData[sender.row].title
-            destinationVC.reportDetailDescription = reportData[sender.row].description
+            destinationVC.reportDetailDescription = reportData[sender.row].body
             destinationVC.reportDetailPhotoUrl = reportData[sender.row].photo_url
             destinationVC.reportDetailLocationDescription = reportData[sender.row].location_desc
             destinationVC.reportDetailLocationLat = reportData[sender.row].location_latitude
             destinationVC.reportDetailLocationLong = reportData[sender.row].location_longitude
             destinationVC.reportDetailSubmittedDate = reportData[sender.row].created_at
+            destinationVC.reportDetailStatus = reportData[sender.row].status
         }
     }
-    
 }
 
 extension ReportViewController:UITableViewDelegate,UITableViewDataSource{
@@ -106,9 +80,33 @@ extension ReportViewController:UITableViewDelegate,UITableViewDataSource{
         let event = self.reportData[indexPath.row]
         
         cell.reportDetailTitle.text = reportData[indexPath.row].title
-        cell.reportDetailDescription.text = reportData[indexPath.row].description
+//        cell.reportDetailDescription.text = reportData[indexPath.row].description
         cell.reportDetailLocation.text = reportData[indexPath.row].location_desc
-        cell.reportDetailDateTime.text =  reportData[indexPath.row].created_at
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        
+        let formatFromString = DateFormatter()
+        formatFromString.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let tempDate = formatFromString.date(from: reportData[indexPath.row].created_at)
+                
+        cell.reportDetailDateTime.text = formatter.string(from: tempDate ?? Date())
+        switch reportData[indexPath.row].status {
+        case "NH": // need help
+            cell.detailStatusImage.image = #imageLiteral(resourceName: "x icon large")
+            break
+        case "S": // solved
+            cell.detailStatusImage.image = #imageLiteral(resourceName: "check icon large")
+            break
+        case "OP": // on progress
+            cell.detailStatusImage.image = #imageLiteral(resourceName: "! icon large")
+            break
+        case "FR": // false report
+//            cell.detailStatusImage.image =
+            break
+        default:
+            break
+        }
         
         GeneralHelper.fetchImage(from: event.photo_url) { (fetchedImage) in
             if let fetchedImage = fetchedImage {
@@ -124,11 +122,5 @@ extension ReportViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "ReportDetailSegue", sender: indexPath)
     }
-    
-    func represhData() {
-        print("represhing")
-//        self.getReportList()
-    }
-    
 }
 

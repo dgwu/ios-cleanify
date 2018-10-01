@@ -15,6 +15,7 @@ class ReportDetailViewController: UIViewController {
     @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var submittedDateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var statusImage: UIImageView!
     
     var reportDetailTitle:String? = nil
     var reportDetailDescription:String? = nil
@@ -23,10 +24,11 @@ class ReportDetailViewController: UIViewController {
     var reportDetailLocationLat:Double? = nil
     var reportDetailLocationLong:Double? = nil
     var reportDetailSubmittedDate:String? = nil
+    var reportDetailStatus:String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+                
         if let reportDetailTitle = reportDetailTitle{
             titleLabel.text=reportDetailTitle
         }
@@ -46,11 +48,34 @@ class ReportDetailViewController: UIViewController {
         }
         
         if let reportDetailLocationDescription = reportDetailLocationDescription{
-            locationButton.setTitle(reportDetailLocationDescription, for: .normal)
+            locationButton.setTitle("   \(reportDetailLocationDescription)", for: .normal)
         }
         
         if let reportDetailSubmittedDate = reportDetailSubmittedDate{
-            submittedDateLabel.text = "Submitted on: " + reportDetailSubmittedDate
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            formatter.timeStyle = .none
+//            cell.reportDetailDateTime.text = formatter.string(from: formatter.date(from: reportData[indexPath.row].created_at) ?? Date())
+            submittedDateLabel.text = "Submitted on " + formatter.string(from: formatter.date(from: reportDetailSubmittedDate) ?? Date())
+        }
+        
+        if let reportDetailStatus = reportDetailStatus{
+            switch reportDetailStatus {
+            case "NH": // need help
+                statusImage.image = #imageLiteral(resourceName: "x icon large")
+                break
+            case "S": // solved
+                statusImage.image = #imageLiteral(resourceName: "check icon large")
+                break
+            case "OP": // on progress
+                statusImage.image = #imageLiteral(resourceName: "! icon large")
+                break
+            case "FR": // false report
+//                statusImage.image = 
+                break
+            default:
+                break
+            }
         }
         
         descriptionLabel.sizeToFit()
