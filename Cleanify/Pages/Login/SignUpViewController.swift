@@ -14,9 +14,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lastNameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var confirmPasswordTxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         emailTxt.delegate = self
         firstNameTxt.delegate = self
         lastNameTxt.delegate = self
@@ -62,9 +67,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        let nextTage=textField.tag+1;
+        let nextTag=textField.tag+1;
         // Try to find next responder
-        let nextResponder=textField.superview?.viewWithTag(nextTage) as UIResponder?
+        let nextResponder=textField.superview?.viewWithTag(nextTag) as UIResponder?
         if (nextResponder != nil){
             // Found next responder, so set it.
             nextResponder?.becomeFirstResponder()
@@ -76,6 +81,23 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return false // We do not want UITextField to insert line-breaks.
     }
     
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if confirmPasswordTxt.isFirstResponder{
+                if view.frame.origin.y == 0{
+                    self.view.frame.origin.y -= keyboardSize.height/2
+                }
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+            if view.frame.origin.y != 0 {
+                self.view.frame.origin.y = 0
+            }
+        }
+    }
     /*
      // MARK: - Navigation
      

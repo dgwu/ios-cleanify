@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
@@ -22,6 +22,9 @@ class LoginViewController: UIViewController {
         formView.layer.shadowOpacity = 0.7
         formView.layer.shadowOffset = CGSize.zero
         formView.layer.shadowRadius = 5
+        
+        emailTxt.delegate = self
+        passwordTxt.delegate = self
         self.navigationController?.navigationBar.tintColor = UIColor.white
         // Do any additional setup after loading the view.
     }
@@ -51,5 +54,21 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        let nextTag=textField.tag+1;
+        // Try to find next responder
+        let nextResponder=textField.superview?.viewWithTag(nextTag) as UIResponder?
+        if (nextResponder != nil){
+            // Found next responder, so set it.
+            nextResponder?.becomeFirstResponder()
+        }
+        else {
+            // Not found, so remove keyboard
+            textField.resignFirstResponder()
+        }
+        return false // We do not want UITextField to insert line-breaks.
     }
 }

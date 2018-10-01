@@ -44,12 +44,13 @@ class TableViewController: UITableViewController {
     func loadIssueReported() {
         doHttpGetWithParam(url: ISSUE_REPORTED_URL, request: ["api_token" : getUserToken()]) { (result) in
             DispatchQueue.main.async {
-                if (result["reports"] == nil) {
+                if (result["reports"] as? String == "") {
                     self.issueCount.text = "\(0)"
                     self.issueBadge.image = UIImage(named: self.issueBadgeLevel(level: self.getIssueLevel(0)))
                     self.issueList = []
                 }
                 else {
+                    print(result)
                     let data:[[String:Any]] = result["reports"] as! [[String : Any]]
                     self.issueCount.text = "\(data.count)"
                     self.issueBadge.image = UIImage(named: self.issueBadgeLevel(level: self.getIssueLevel(data.count)))
@@ -62,7 +63,7 @@ class TableViewController: UITableViewController {
     func loadEventParticipated() {
         doHttpGetWithParam(url: PARTICIPATED_EVENT_URL, request: ["api_token" : getUserToken()]) { (result) in
             DispatchQueue.main.async {
-                if (result["events"] == nil) {
+                if (result["events"] as? String == "") {
                     self.eventCount.text = "\(0)"
                     self.eventBadge.image = UIImage(named: self.eventBadgeLevel(level: self.getEventLevel(0)))
                     self.eventList = []
@@ -80,7 +81,7 @@ class TableViewController: UITableViewController {
     func loadUpcomingEvents() {
         doHttpGetWithParam(url: UPCOMING_EVENT_URL, request: ["api_token" : getUserToken()]) { (result) in
             DispatchQueue.main.async {
-                if (result["events"] == nil) {
+                if (result["events"] as? String == "") {
                     self.upcomingEventList = []
                 }
                 else {
