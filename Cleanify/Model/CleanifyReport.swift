@@ -18,6 +18,7 @@ struct CleanifyReport:Codable{
     let location_latitude:Double
     let location_longitude:Double
     let created_at:String
+    let status:String
     
     enum CodingKeys:String,CodingKey{
         case id = "id"
@@ -29,5 +30,6 @@ struct CleanifyReport:Codable{
         case location_latitude = "location_latitude"
         case location_longitude = "location_longitude"
         case created_at = "created_at"
+        case status = "status"
     }
 }

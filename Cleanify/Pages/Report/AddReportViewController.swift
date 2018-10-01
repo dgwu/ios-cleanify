@@ -9,9 +9,9 @@
 import UIKit
 import CoreLocation
 
-protocol AddReportViewControllerDelegate {
-    func represhData()
-}
+//protocol AddReportViewControllerDelegate {
+//    func represhData()
+//}
 
 class AddReportViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     
@@ -21,10 +21,11 @@ class AddReportViewController: UIViewController, CLLocationManagerDelegate, UITe
     @IBOutlet weak var LocationDescriptionTextField: UITextField!
     @IBOutlet weak var reportDescriptionTextView: UITextView!
     @IBOutlet weak var chosenImageView: UIImageView!
-    @IBOutlet weak var LocationLongitudeLatitudeLabel: UILabel!
+//    @IBOutlet weak var LocationLongitudeLatitudeLabel: UILabel!
     @IBOutlet weak var uniqueView: UIScrollView!
+    @IBOutlet weak var descriptionTextView: UIView!
     
-    var delegate: AddReportViewControllerDelegate?
+//    var delegate: AddReportViewControllerDelegate?
     let reportDescriptionPlaceholderText = "Report Description..."
     let imagePicker = UIImagePickerController()
     let locationManager = CLLocationManager()
@@ -41,12 +42,12 @@ class AddReportViewController: UIViewController, CLLocationManagerDelegate, UITe
             DispatchQueue.main.async {
                 if result["isValid"] as! Bool == true {
                     
-                    let user = result["user"] as! [String : Any]
+//                    let user = result["user"] as! [String : Any]
                     
                 } else {
                     
-                    let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginVC") as? LoginViewController
-                    self.navigationController?.pushViewController(vc!, animated: true)
+//                    let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginVC") as? LoginViewController
+//                    self.navigationController?.pushViewController(vc!, animated: true)
                 }
             }
         }
@@ -54,6 +55,10 @@ class AddReportViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        descriptionTextView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        descriptionTextView.layer.borderWidth = 1
+        descriptionTextView.layer.cornerRadius = 10
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -70,7 +75,7 @@ class AddReportViewController: UIViewController, CLLocationManagerDelegate, UITe
         
         prettifyReportDescriptionTextView()
     
-        
+        findLocationTapped(self)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -159,7 +164,8 @@ class AddReportViewController: UIViewController, CLLocationManagerDelegate, UITe
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         self.Latitude=locValue.latitude
         self.Longitude=locValue.longitude
-        LocationLongitudeLatitudeLabel.text = "[\(locValue.latitude), \(locValue.longitude)]"
+//        manager.location.
+//        LocationLongitudeLatitudeLabel.text = "[\(locValue.latitude), \(locValue.longitude)]"
     }
     
     @IBAction func uploadPhotosTapped(_ sender: Any) {
@@ -192,7 +198,7 @@ class AddReportViewController: UIViewController, CLLocationManagerDelegate, UITe
         
         CleanifyApi().postReportWithPhoto(photo: chosenImageView.image, apiPath: "postreport", parameters: request) { (result) in
             print("mashook")
-            self.delegate?.represhData()
+//            self.delegate?.represhData()
             DispatchQueue.main.async {
                 self.navigationController?.popViewController(animated: true)
             }

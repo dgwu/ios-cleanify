@@ -12,9 +12,11 @@ class ReportDetailTableViewCell: UITableViewCell {
 
     @IBOutlet weak var reportDetailImage: UIImageView!
     @IBOutlet weak var reportDetailTitle: UILabel!
-    @IBOutlet weak var reportDetailDescription: UILabel!
+//    @IBOutlet weak var reportDetailDescription: UILabel!
     @IBOutlet weak var reportDetailDateTime: UILabel!
     @IBOutlet weak var reportDetailLocation: UILabel!
+    @IBOutlet weak var reportDetailStatus: UILabel!
+    @IBOutlet weak var detailStatusImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
